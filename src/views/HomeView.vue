@@ -9,7 +9,7 @@
             <div>
                 <div v-for="index in 6">
                     <div>
-                        
+                        sagol
                     </div>
                 </div>
             </div>
