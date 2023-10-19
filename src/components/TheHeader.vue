@@ -1,5 +1,5 @@
 <template>
-    <div class=" p-5">
+    <div class=" p-5 border-b-2 border-black">
         <div class=" flex justify-between w-[100%]">
             <img src="../static/BIEN.svg" alt="">
             <div class=" flex flex-col justify-center">
