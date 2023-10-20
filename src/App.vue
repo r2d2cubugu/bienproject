@@ -1,7 +1,13 @@
+<style>
+html, body{
+    width: 100%;
+}
+</style>
+
 <template>
-    <div>
-        <TheHeader v-if="showHeader"/>
-        <RouterView></RouterView>
+    <div class=" w-[100%]">
+        <TheHeader class=" w-[100%]" v-if="showHeader"/>
+        <RouterView class=" w-[100%]"></RouterView>
         <TheFooter v-if="CheckStore.haveComponent"/>
     </div>
 </template>

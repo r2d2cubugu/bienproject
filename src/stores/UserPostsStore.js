@@ -5,13 +5,16 @@ export let useUserPostsStore = defineStore({
     id:"UserPostsStore",
     state:()=>({
         latestPosts:{
+            userProfil:"../static/userProfil.svg",
             name:"Hesen Hesenli",
-            photo:"../static/Rectangle 2.png",
-            like:555
+            photo:"../static/latestPhoto.png",
+            like:555,
+            
     },
     likedPosts:{
+        userProfil:"../static/userProfil.svg",
         name:"Hesen Hesenli",
-            photo:"../static/Rectangle 2.png",
+            photo:"../static/mostLiked.png",
             like:555
     }
     })
