@@ -8,7 +8,7 @@ html, body{
     <div class=" w-[100%]">
         <TheHeader class=" w-[100%]" v-if="showHeader"/>
         <RouterView class=" w-[100%]"></RouterView>
-        <TheFooter v-if="CheckStore.haveComponent"/>
+        <TheFooter class=" relative bottom-0" v-if="showHeader"/>
     </div>
 </template>
 
