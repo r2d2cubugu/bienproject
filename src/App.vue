@@ -16,13 +16,16 @@ html, body{
 import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
 import { useCheckStore } from './stores/CheckStore';
+import { useLoginStore } from './stores/LoginStore';
 import {useRoute} from "vue-router"
 import { computed } from 'vue';
 let route = useRoute()
+let LoginStore = useLoginStore()
 let showHeader = computed(()=>{
     return route.meta.showHeader != false
 })
 
+console.log(LoginStore.email, LoginStore.password);
 let CheckStore = useCheckStore()
 
 </script>
