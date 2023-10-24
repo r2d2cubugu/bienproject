@@ -11,7 +11,7 @@
               </div>
               <div class=" flex flex-col gap-4">
                   <input type="password"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Password" v-model="testPassword" >
-                  <!-- <p v-if="msg" class=" text-red-700 font-bold text-sm">{{ msg }}</p> -->
+                  <p v-if="msg" class=" text-red-700 font-bold text-sm">{{ msg }}</p>
                   <div class=" flex justify-between">
                       <button @click="LoginStore.toComponent(LoginHome)" class=" bg-[#f21818] font-bold text-black py-1.5 px-3.5 rounded-full lg:rounded-lg flex"><img class=" w-4 self-center" src="../static/back_112351.svg" alt="">Go back </button>
                   <button @click="goHomePage()" class=" bg-[#1877F2]  text-white py-1.5 px-3.5 rounded-full lg:rounded-lg">Contuine</button>
@@ -83,6 +83,10 @@ else{
       LoginStore.isConnected = true
 
     }else{
+      msg.value = "Sifre yanlisdir"
+      setTimeout(()=>{
+        msg.value = null
+      }, 2000)
       // console.log("ugurusuz")
     }
 
