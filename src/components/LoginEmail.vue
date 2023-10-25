@@ -10,9 +10,9 @@ import { RouterLink } from 'vue-router';
             <p class=" font-bold lg:text-xl">New user? <RouterLink class=" text-[#1473E6] font-normal lg:text-xl" to="/register">Create an account</RouterLink></p>
             </div>
             <div class=" flex flex-col gap-4">
-                <input type="email"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Email address" v-model="mail" >
+                <input type="email" @keydown.enter="changeToPassword"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Email address" v-model="mail" >
                 <p v-if="msg" class=" text-red-700 font-bold text-sm">{{ msg }}</p>
-                <button @click=changeToPassword() class=" bg-[#1877F2] self-end  text-white py-1.5 px-3.5 rounded-full lg:rounded-lg">Contuine</button>
+                <button @keydown.enter="changeToPassword" @click=changeToPassword() class=" bg-[#1877F2] self-end  text-white py-1.5 px-3.5 rounded-full lg:rounded-lg">Contuine</button>
             </div>
             <!-- Flowbitedan goturdum -->
             <div
