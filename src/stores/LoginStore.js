@@ -9,7 +9,8 @@ export let useLoginStore = defineStore({
         users:[
             {
                 email:"sesivere@gmail.com",
-                password:12345
+                password:12345,
+                id:1
             }
         ],
         connectedMail:"",

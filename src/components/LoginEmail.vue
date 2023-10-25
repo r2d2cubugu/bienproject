@@ -30,9 +30,9 @@ import { RouterLink } from 'vue-router';
               <p class="">Contuine with Apple</p></button>
           </div>
           <button class=" hidden mt-4 lg:flex text-[#1473E6]">Get help sign in</button>
-          <div class=" lg:hidden p-0 gap-0">
+          <div class=" lg:hidden p-0 gap-0 mt-2">
           <button class="text-[#1473E6] text-[9px] block mb-0">Reset your password</button>
-          <button class="text-[#1473E6] text-[9px]">Sign in to a different account</button>
+          <!-- <button class="text-[#1473E6] text-[9px]">Sign in to a different account</button> -->
 
           </div>
         </div>

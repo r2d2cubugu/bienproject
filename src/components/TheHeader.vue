@@ -8,7 +8,7 @@
             </div>
             <div class=" flex gap-2">
                     <button @click="$router.push('/login')" v-if="!LoginStore.isConnected" class=" self-center h-min py-[1.73px] lg:py-1 px-3  border-2 border-black rounded-md lg:rounded-2xl">Login</button>
-                <button v-if="!LoginStore.isConnected" class=" mr-8 self-center h-min w-max py-[1.73px] lg:py-1 px-4  border-2 border-black rounded-md lg:rounded-2xl flex bg-black text-white">Sign up</button>
+                <button @click="$router.push('/register')" v-if="!LoginStore.isConnected" class=" mr-8 self-center h-min w-max py-[1.73px] lg:py-1 px-4  border-2 border-black rounded-md lg:rounded-2xl flex bg-black text-white">Sign up</button>
                 <div v-if="LoginStore.isConnected" class=" flex gap-4">
                     <button class=" bg-black rounded-3xl lg:flex  lg:px-2.5 lg:py-2 lg:align-center lg:items-center hidden text-sm text-white" v-if="LoginStore.isConnected">Share Your Work</button>
                 

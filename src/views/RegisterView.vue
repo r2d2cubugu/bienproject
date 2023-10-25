@@ -19,14 +19,15 @@
             <div>
                 <div>
                     <p class="text-neutral-700 text-xl font-semibold">Sign up with email</p>
-                    <p class=" text-neutral-700 text-lg inline">Already have an account? </p> <button class=" font-semibold text-lg text-blue-600">Sign in</button>
+                    <p class=" text-neutral-700 text-lg inline">Already have an account? </p> <button @click="$router.push('/login')" class=" font-semibold text-lg text-blue-600">Sign in</button>
                 </div>
                 <div class=" flex flex-col mt-6 lg:gap-4 lg:mt-7">
-                <input type="email"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Email address">
-                <input type="password"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Password">
+                <input for="email" v-on:keyup.enter="$event.target.nextElementSibling.focus()" type="email" v-model="mail" @blur="validateEmail()" :class=" isFalseMail ? ' border-red-600' : ''"   required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Email address">
+                <input @keyup.enter="registerNewUser" type="password" v-model="pass" :class=" isFalsePass ? ' border-red-600' : ''"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Password">
                 </div>
+                <p v-if=" msg" :class=" isCorrect ? ' text-green-700 font-bold' : 'text-red-700 font-bold'">{{ msg }}</p>
                 <div class=" flex justify-end mt-2">
-                    <button class=" bg-[#1877F2] self-end  text-white py-1.5 px-3.5 rounded-full lg:rounded-lg">Contuine</button>
+                    <button @keydown.enter="registerNewUser()" @click="registerNewUser()" class=" bg-[#1877F2] self-end  text-white py-1.5 px-3.5 rounded-full lg:rounded-lg">Contuine</button>
                 </div>
             </div>
           </div>
@@ -37,3 +38,68 @@
       
   
   </template>
+
+
+<script setup>
+import { useLoginStore } from '../stores/LoginStore';
+import {ref} from "vue"
+import {useRoute} from "vue-router"
+const loginStore = useLoginStore()
+let msg = ref()
+let mail = ref()
+let pass = ref()
+let isCorrect = ref(false)
+let isFalseMail = ref(false)
+let isFalsePass = ref(false)
+let newUser = ref({})
+
+function registerNewUser(){
+  if(mail.value == null || pass.value == null || mail.value == '' || pass.value == ''){
+    msg.value = "Zehmet olmasa qirmizi xanalari doldurun."
+    setTimeout(() => {
+      msg.value = null
+    }, 3000);
+    isCorrect.value = false
+    if(mail.value == null || mail.value == ''){
+      isFalseMail.value = true
+      // console.log("Mail", isFalseMail.value);
+    }
+    if(pass.value == null || pass.value == ''){
+      isFalsePass.value = true
+      // console.log("Pass", isFalsePass.value);
+    }
+    if(mail.value != null && mail.value != ''){
+      isFalseMail.value = false
+      // console.log("Mail", isFalseMail.value);
+    }
+    if(pass.value != null && pass.value != ''){
+      isFalsePass.value = true
+      // console.log("Pass", isFalsePass.value);
+    }
+
+  }else{
+    isFalseMail.value = false
+    isFalsePass.value = false
+    newUser.value =
+{
+  email: mail.value,
+  password: pass.value,
+  id: new Date()
+}
+
+    loginStore.users.push(newUser.value)
+    isCorrect.value = true
+    msg.value = "Qeydiyyatiniz ugurla neticelendi. Zehmet olmasa login seyfesinden yaratdiginiz hesaba girin."
+    setTimeout(() => {
+      msg.value = null
+    }, 3000);
+    mail.value = null
+    pass.value = null
+  }
+  
+// console.log(newUser.value);
+}
+
+
+
+</script>
