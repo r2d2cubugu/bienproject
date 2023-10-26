@@ -22,7 +22,7 @@
                     <p class=" text-neutral-700 text-lg inline">Already have an account? </p> <button @click="$router.push('/login')" class=" font-semibold text-lg text-blue-600">Sign in</button>
                 </div>
                 <div class=" flex flex-col mt-6 lg:gap-4 lg:mt-7">
-                <input for="email" v-on:keyup.enter="$event.target.nextElementSibling.focus()" type="email" v-model="mail" @blur="validateEmail()" :class=" isFalseMail ? ' border-red-600' : ''"   required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Email address">
+                <input for="email" v-on:keyup.enter="$event.target.nextElementSibling.focus()" type="email" v-model="mail" :class=" isFalseMail ? ' border-red-600' : 'lg:border-black'"   required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg " placeholder="Email address">
                 <input @keyup.enter="registerNewUser" type="password" v-model="pass" :class=" isFalsePass ? ' border-red-600' : ''"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Password">
                 </div>
                 <div class="  h-min">
@@ -88,6 +88,12 @@ function registerNewUser(){
       msg.value = "Bu adla biri coxdan qeydiyatdan kecib"
       setTimeout(() => {
         msg.value = null
+      }, 3000);
+    }else if( !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value) ){
+      isFalseMail.value = true
+      msg.value = "Zehmet olmasa kecerli bir gmail girin"
+      setTimeout(() => {
+        msg.value = ""
       }, 3000);
     }else{
       isFalseMail.value = false

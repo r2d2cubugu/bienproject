@@ -3,12 +3,20 @@ import Home from "./views/HomeView.vue"
 import Login from "./views/LoginView.vue"
 import Register from "./views/RegisterView.vue"
 import Test from "./views/TestPage.vue"
+// import UserProfile from "./views/userProfile/_name.vue"
+import User from "./views/UserView.vue"
 
 const routes = [
     {
         path:"/",
         name:"Home",
         component:Home,
+        
+    },
+    {
+        path:"/myprofile",
+        name:"Userprofile",
+        component:User,
         
     },
     {
