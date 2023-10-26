@@ -4,7 +4,6 @@
     <component :is=isComponent>
     <!-- <LoginEmail /> -->
   </component>
-  <button @click="$router.push('/')"><img class=" fixed top-4 left-2 hidden lg:flex" src="../static/BIENwhite.svg" alt=""><img class=" fixed top-8 left-2 lg:hidden" src="../static/BIEN.svg" alt=""></button>
   </div>
 </template>
 

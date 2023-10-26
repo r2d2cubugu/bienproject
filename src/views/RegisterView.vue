@@ -2,7 +2,7 @@
     <div class=" flex flex-col h-screen gap-12">
       <div class=" lg:bg-[url('./static/coxCiddiGorunenAdam.png')] lg:w-full lg:h-[110vh] lg:px-20 lg:py-52 lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-between">
           <img class=" hidden lg:flex h-max" src="../static/bienLogin.svg" alt="">
-          <div class=" pt-40 pb-8 lg:py-16 px-5 lg:px-16 bg-white rounded-md h-max w-[100%] lg:w-max">
+          <div :class=" msg ? ' lg:px-14 lg:pb-6' : ' lg:px-16 lg:pb-4' " class=" pt-40 pb-8 lg:pt-20  px-5 bg-white rounded-md h-max w-[100%] lg:w-max">
            <h4 class=" text-xl lg:text-[32px] self-start lg:self-center lg:text-center font-bold">Create an account</h4>
            <div class=" flex justify-center mt-8 lg:mt-12 gap-8">
             <button><img class=" w-12 h-12 rounded-full border-2 p-2 border-black" src="../static/google.svg" alt=""></button>
@@ -25,7 +25,9 @@
                 <input for="email" v-on:keyup.enter="$event.target.nextElementSibling.focus()" type="email" v-model="mail" @blur="validateEmail()" :class=" isFalseMail ? ' border-red-600' : ''"   required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Email address">
                 <input @keyup.enter="registerNewUser" type="password" v-model="pass" :class=" isFalsePass ? ' border-red-600' : ''"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Password">
                 </div>
-                <p v-if=" msg" :class=" isCorrect ? ' text-green-700 font-bold' : 'text-red-700 font-bold'">{{ msg }}</p>
+                <div class="  h-min">
+                <p v-if=" msg" :class=" isCorrect ? ' text-green-700 font-bold' : 'text-red-700 font-bold'" class=" text-sm h-fit">{{ msg }}</p>
+              </div>
                 <div class=" flex justify-end mt-2">
                     <button @keydown.enter="registerNewUser()" @click="registerNewUser()" class=" bg-[#1877F2] self-end  text-white py-1.5 px-3.5 rounded-full lg:rounded-lg">Contuine</button>
                 </div>
@@ -35,6 +37,8 @@
       <button class=" lg:hidden relative justify-self-center bottom-8 text-xs font-normal content-center"> Get help sign in </button>
   
     </div>
+  <button @click="$router.push('/')"><img class=" fixed top-4 left-2 hidden lg:flex" src="../static/BIENwhite.svg" alt=""><img class=" fixed top-8 left-2 lg:hidden" src="../static/BIEN.svg" alt=""></button>
+
       
   
   </template>
@@ -45,6 +49,7 @@ import { useLoginStore } from '../stores/LoginStore';
 import {ref} from "vue"
 import {useRoute} from "vue-router"
 const loginStore = useLoginStore()
+let route = useRoute()
 let msg = ref()
 let mail = ref()
 let pass = ref()
@@ -78,23 +83,31 @@ function registerNewUser(){
     }
 
   }else{
-    isFalseMail.value = false
+    if(loginStore.users.find(el => el.email == mail.value)){
+      isCorrect.value = false
+      msg.value = "Bu adla biri coxdan qeydiyatdan kecib"
+      setTimeout(() => {
+        msg.value = null
+      }, 3000);
+    }else{
+      isFalseMail.value = false
     isFalsePass.value = false
-    newUser.value =
-{
+    newUser.value=
+    {
   email: mail.value,
   password: pass.value,
   id: new Date()
-}
+    }
 
     loginStore.users.push(newUser.value)
     isCorrect.value = true
-    msg.value = "Qeydiyyatiniz ugurla neticelendi. Zehmet olmasa login seyfesinden yaratdiginiz hesaba girin."
+    msg.value = " Hesaba girmek ucun zehmet olmasa login daxil olun."
     setTimeout(() => {
       msg.value = null
     }, 3000);
     mail.value = null
     pass.value = null
+    }
   }
   
 // console.log(newUser.value);
