@@ -6,7 +6,7 @@
                 <p class=" lg:w-[600px] text-white ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus et quisquam ad asperiores id, ratione corrupti recusandae eveniet aperiam dolorem consectetur molestiae animi vero dolor aut beatae a. Ut, vel!</p>
             <div class=" flex lg:hidden gap-2 justify-between">
                 <div class=" flex flex-col">
-                <p class=" text-white font-semibold">Contact</p>
+                <button @click="$router.push('/contact')" class=" text-white font-semibold">Contact</button>
                 <p class=" text-white">Mirbala@gmail.com</p>
             </div>
             <div class=" flex w-max gap-2">
@@ -26,7 +26,7 @@
 
          </div>
             <div class=" hidden lg:flex lg:flex-col">
-                <p class=" text-white font-semibold">Contact</p>
+                <button @click="$router.push('/contact')" class=" text-white font-semibold">Contact</button>
                 <p class=" text-white">Mirbala</p>
             </div>
         </div>

@@ -5,12 +5,19 @@ import Register from "./views/RegisterView.vue"
 import Test from "./views/TestPage.vue"
 // import UserProfile from "./views/userProfile/_name.vue"
 import User from "./views/UserView.vue"
+import Contact from "./views/ContactView.vue"
 
 const routes = [
     {
         path:"/",
         name:"Home",
         component:Home,
+        
+    },
+    {
+        path:"/contact",
+        name:"Contact",
+        component:Contact,
         
     },
     {

@@ -1,7 +1,9 @@
 <template>
     <div class=" lg:p-5 border-b-2 border-black">
         <div class=" flex justify-between w-[100%]">
+            <button @click="$router.push('/')">
             <img src="../static/BIEN.svg" alt="">
+            </button>
             <div class=" flex flex-col justify-between gap-5 lg:gap-0 lg:justify-center my-2">
                 <input type="text" class=" border-2 rounded-3xl pr-48 pl-1 hidden lg:flex placeholder:text-black border-black" placeholder="Search">
                 <button class=" bg-black rounded-[5px] my-2 flex w-max self-center lg:hidden  text-sm text-white" v-if="LoginStore.isConnected">Share Your Work</button>
