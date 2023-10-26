@@ -3,13 +3,18 @@ import Home from "./views/HomeView.vue"
 import Login from "./views/LoginView.vue"
 import Register from "./views/RegisterView.vue"
 import Test from "./views/TestPage.vue"
+import Contact from "./views/ContactView.vue"
 
 const routes = [
     {
         path:"/",
         name:"Home",
         component:Home,
-        
+    },
+    {
+        path:"/contact",
+        name:"Contact",
+        component:Contact,
     },
     {
         path:"/test",
