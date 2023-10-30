@@ -14,7 +14,7 @@
                 <div v-if="LoginStore.isConnected" class=" flex gap-4">
                     <button class=" bg-black rounded-3xl lg:flex  lg:px-2.5 lg:py-2 lg:align-center lg:items-center hidden text-sm text-white" v-if="LoginStore.isConnected">Share Your Work</button>
                 
-                    <button class=" self-center" v-if="LoginStore.isConnected"><img class=" self-center w-8 h-8 rounded-full hidden lg:flex" src="../static/profil.png" alt=""></button>
+                    <button @click="$router.push('/myprofile')" class=" self-center" v-if="LoginStore.isConnected"><img class=" self-center w-8 h-8 rounded-full hidden lg:flex" src="../static/profil.png" alt=""></button>
                     <button v-if="LoginStore.isConnected" class=" lg:hidden"> <img class=" self-center" src="../static/magecglassicon.svg" alt=""></button>
                 
                     <button class=" self-center hidden lg:flex" v-if="LoginStore.isConnected"><img class=" self-center" src="../static/icon_bell_.svg" alt=""></button>

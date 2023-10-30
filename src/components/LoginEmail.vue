@@ -1,20 +1,20 @@
 
 import { RouterLink } from 'vue-router';
 <template>
-  <div class=" flex flex-col h-screen gap-12">
-    <div class=" lg:bg-[url('./static/LoginBg.png')] lg:w-full lg:h-[110vh] lg:px-20 lg:py-52 lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-between">
-        <img class=" hidden lg:flex h-max" src="../static/bienLogin.svg" alt="">
-        <div class=" pt-40 pb-8 lg:py-20 px-5 lg:px-24 bg-white rounded-md h-max w-[100%] lg:w-max">
+  <div class=" flex flex-col h-screen gap-12 border border-red-500">
+    <!-- <div class=" lg:bg-[url('./static/LoginBg.png')] lg:w-full lg:h-screen lg:px-20 lg:py-52 lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-between"> -->
+      <img class=" hidden lg:flex h-max absolute top-32 left-20" src="../static/bienLogin.svg" alt="">
+    <div class=" lg:bg-[url('./static/LoginBg.png')] lg:w-full lg:h-screen lg:px-20  lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-end">
+        <div class=" pt-40 pb-8 lg:py-10 px-5 lg:px-24 lg:relative lg:bottom-14 bg-white rounded-md h-max w-[100%] lg:w-max border border-red-300 self-end">
             <div class=" mb-8 lg:mb-10">
                             <h4 class=" text-2xl lg:text-[32px] font-bold mb-2">Sign in</h4>
             <p class=" font-bold lg:text-xl">New user? <RouterLink class=" text-[#1473E6] font-normal lg:text-xl" to="/register">Create an account</RouterLink></p>
             </div>
             <div class=" flex flex-col gap-4">
-                <input type="email" @keydown.enter="changeToPassword"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Email address" v-model="mail" >
+                <input type="email" @keydown.enter="changeToPassword"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 lg:rounded-lg lg:border-black" placeholder="Email address" v-model="mail" >
                 <p v-if="msg" class=" text-red-700 font-bold text-sm">{{ msg }}</p>
                 <button @keydown.enter="changeToPassword" @click=changeToPassword() class=" bg-[#1877F2] self-end  text-white py-1.5 px-3.5 rounded-full lg:rounded-lg">Contuine</button>
             </div>
-            <!-- Flowbitedan goturdum -->
             <div
             class=" flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
             <p
@@ -32,11 +32,9 @@ import { RouterLink } from 'vue-router';
           <button class=" hidden mt-4 lg:flex text-[#1473E6]">Get help sign in</button>
           <div class=" lg:hidden p-0 gap-0 mt-2">
           <button class="text-[#1473E6] text-[9px] block mb-0">Reset your password</button>
-          <!-- <button class="text-[#1473E6] text-[9px]">Sign in to a different account</button> -->
 
           </div>
         </div>
-        <!-- <img src="https://www.figma.com/file/eCuTmzALv6S8RDrsCKZGGD/image/b47e7df3efd6eba2a3b3d2b9441da0ccb03513b2" class=" " alt=""> -->
     </div>
     <button class=" lg:hidden relative justify-self-center bottom-8 text-xs font-normal content-center"> Get help sign in </button>
 

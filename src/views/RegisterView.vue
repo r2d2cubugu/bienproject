@@ -1,8 +1,8 @@
 <template>
     <div class=" flex flex-col h-screen gap-12">
-      <div class=" lg:bg-[url('./static/coxCiddiGorunenAdam.png')] lg:w-full lg:h-[110vh] lg:px-20 lg:py-52 lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-between">
-          <img class=" hidden lg:flex h-max" src="../static/bienLogin.svg" alt="">
-          <div :class=" msg ? ' lg:px-14 lg:pb-6' : ' lg:px-16 lg:pb-4' " class=" pt-40 pb-8 lg:pt-20  px-5 bg-white rounded-md h-max w-[100%] lg:w-max">
+      <img class="  hidden lg:flex h-max absolute top-32 left-20" src="../static/bienLogin.svg" alt="">
+      <div class=" lg:bg-[url('./static/coxCiddiGorunenAdam.png')] lg:w-full lg:h-screen lg:px-20 lg:py-44 lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-end">
+          <div :class=" msg ? ' lg:px-14 lg:pb-6' : ' lg:px-16 lg:pb-4' " class=" pt-40 pb-8 lg:pt-20 lg:relative bottom-10  px-5 bg-white rounded-md h-max w-[100%] lg:w-max">
            <h4 class=" text-xl lg:text-[32px] self-start lg:self-center lg:text-center font-bold">Create an account</h4>
            <div class=" flex justify-center mt-8 lg:mt-12 gap-8">
             <button><img class=" w-12 h-12 rounded-full border-2 p-2 border-black" src="../static/google.svg" alt=""></button>

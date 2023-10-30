@@ -16,6 +16,11 @@ export let useUserPostsStore = defineStore({
         name:"Hesen Hesenli",
             photo:"../static/mostLiked.png",
             like:555
-    }
+    },
+    userPosts:[
+        {
+            photos:"../static/mostLiked.png"
+        }
+    ]
     })
 })
