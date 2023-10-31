@@ -6,6 +6,8 @@ import Test from "./views/TestPage.vue"
 // import UserProfile from "./views/userProfile/_name.vue"
 import User from "./views/UserView.vue"
 import Contact from "./views/ContactView.vue"
+import Message from "./views/MessagesView.vue"
+import contactUser from "./views/contactUser/_id..vue"
 
 const routes = [
     {
@@ -13,6 +15,17 @@ const routes = [
         name:"Home",
         component:Home,
         
+    },
+    {
+        path:"/mymessage",
+        name:"Message",
+        component:Message,
+        children:[
+            {
+                path:":id",
+                component:contactUser
+            }
+        ]
     },
     {
         path:"/contact",
