@@ -4,75 +4,52 @@ export let useMessageUserStore = defineStore({
     id:"Message store",
     state:()=>({
         name:"Salam",
-        messages:[
+        chat:[
             {
                 name:"Hesen",
                 id:1,
                 profil:"../../src/static/contact1.png",
-                hisMessages:[
+                messages:[
                     {
-                        message:"Test1",
-                        time:"2023 12 20 19:20:03"
-                    }
-                ],
-                yourMessages:[
+                        isYour:false,
+                        content:"Salam"
+                    },
                     {
-                        message:"Test2",
-                        time:"2023 12 20 19:21:04"
+                        isYour:true,
+                        content:"Sagol"
                     }
-                ],
-                lastMessage:{
-                    message:"Pqmw",
-                    time:"20231220192104"
-                }
+                ]
             },
             {
-                name:"Hesen",
+                name:"Eli",
                 id:2,
                 profil:"../../src/static/contact2.png",
-                hisMessages:[
+                messages:[
                     {
-                        message:"Test1",
-                        time:"2023 12 20 19:20:03"
-                    }
-                ],
-                yourMessages:[
+                        isYour:false,
+                        content:"Salam"
+                    },
                     {
-                        message:"Test2",
-                        time:"2023 12 20 19:21:04"
+                        isYour:true,
+                        content:"Sagol"
                     }
-                ],
-                lastMessage:{
-                    message:"Pqmw",
-                    time:"20231220192104"
-                }
+                ]
             },
             {
-                name:"Hesen",
+                name:"Huseyn",
                 id:3,
                 profil:"../../src/static/contact3.png",
-                hisMessages:[
+                messages:[
                     {
-                        message:"Test1",
-                        time:"2023 12 20 19:20:03"
-                    }
-                ],
-                yourMessages:[
+                        isYour:false,
+                        content:"Salam"
+                    },
                     {
-                        message:"Test2",
-                        time:"20231220192104"
+                        isYour:true,
+                        content:"Sagol"
                     }
-                ],
-                lastMessage:{
-                    message:"Pqmw",
-                    time:{
-                        day:31,
-                        month:10,
-                        year:2023,
-                        clock:"20:22"
-                    }
-                }
+                ]
             },
-        ]
+                 ]
     })
 })

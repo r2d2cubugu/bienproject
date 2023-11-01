@@ -7,7 +7,7 @@
                 <p class=" self-center font-bold text-2xl">Messages</p>
             </div>
             <div class=" flex-col">
-                <div v-for=" contact in messageUserStore.messages" :key="contact.name">
+                <div v-for=" user in messageUserStore.chat" :key="contact.id">
                     
                         <button class=" border-b-2 pl-2 flex text-sm py-3.5 w-full">
                             <!-- <pre>{{ contact }}</pre> -->
@@ -20,12 +20,13 @@
                                {{ contact.lastMessage.time }}
                             </p> -->
                         </button>
+                        
                     
                 </div>
             </div>
         </div>
-        <div>
-            <RouterView></RouterView>
+        <div class=" w-full h-80">
+            <RouterView class=" w-full"></RouterView>
         </div>
     </div>
     </div>
