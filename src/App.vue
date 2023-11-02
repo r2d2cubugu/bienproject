@@ -5,7 +5,7 @@ html, body{
 </style>
 
 <template>
-    <div class=" w-[100%]">
+    <div class=" h-min">
         <TheHeader class=" w-[100%]" v-if="showHeader"/>
         <RouterView class=" w-[100%]"></RouterView>
         <TheFooter class=" relative bottom-0" v-if="showHeader"/>

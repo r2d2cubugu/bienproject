@@ -6,15 +6,15 @@
                 <img class=" w-12 h-8" src="../static/icon_mail_.svg" alt="">
                 <p class=" self-center font-bold text-2xl">Messages</p>
             </div>
-            <div class=" flex-col">
-                <div v-for=" user in messageUserStore.chat" :key="contact.id">
+            <div class=" flex-col min-h-[50vh]">
+                <div v-for=" user in messageUserStore.chat" :key="user.id">
                     
-                        <button class=" border-b-2 pl-2 flex text-sm py-3.5 w-full">
+                        <button @click="$router.push(`/mymessage/${user.id}`)" class=" border-b-2 pl-2 flex justify-start text-sm py-3.5 w-full">
                             <!-- <pre>{{ contact }}</pre> -->
-                            <img class=" w-12 h-12" :src=contact.profil alt="">
+                            <img class=" w-12 h-12" :src=user.profil alt="">
                             <div class=" ml-5">
-                                <p class=" font-bold">{{ contact.name }}</p>
-                                <p class=" ">{{ contact.lastMessage.message }}</p>
+                                <p class=" font-bold self-start justify-self-start">{{ user.name }}</p>
+                                <p class=" ">{{ user.messages[1].content }}</p>
                             </div>
                             <!-- <p>
                                {{ contact.lastMessage.time }}
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class=" w-full h-80">
+        <div class=" w-full h-full">
             <RouterView class=" w-full"></RouterView>
         </div>
     </div>
@@ -37,6 +37,7 @@
 import {ref} from "vue"
 import { useMessageUserStore } from '../stores/messageUserStore';
 let messageUserStore = useMessageUserStore()
+
 
 const date = ref(new Date())
 const year = ref(date.value.getUTCFullYear)

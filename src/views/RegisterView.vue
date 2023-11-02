@@ -1,6 +1,7 @@
 <template>
-    <div class=" flex flex-col h-screen gap-12">
-      <img class="  hidden lg:flex h-max absolute top-32 left-20" src="../static/bienLogin.svg" alt="">
+  <div class=" flex flex-col h-screen gap-12 border border-red-500">
+    <!-- <div class=" lg:bg-[url('./static/LoginBg.png')] lg:w-full lg:h-screen lg:px-20 lg:py-52 lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-between"> -->
+      <img class=" hidden lg:flex h-max absolute top-32 left-20" src="../static/bienLogin.svg" alt="">
       <div class=" lg:bg-[url('./static/coxCiddiGorunenAdam.png')] lg:w-full lg:h-screen lg:px-20 lg:py-44 lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-end">
           <div :class=" msg ? ' lg:px-14 lg:pb-6' : ' lg:px-16 lg:pb-4' " class=" pt-40 pb-8 lg:pt-20 lg:relative bottom-10  px-5 bg-white rounded-md h-max w-[100%] lg:w-max">
            <h4 class=" text-xl lg:text-[32px] self-start lg:self-center lg:text-center font-bold">Create an account</h4>
@@ -34,14 +35,12 @@
             </div>
           </div>
       </div>
-      <button class=" lg:hidden relative justify-self-center bottom-8 text-xs font-normal content-center"> Get help sign in </button>
-  
-    </div>
-  <button @click="$router.push('/')"><img class=" fixed top-4 left-2 hidden lg:flex" src="../static/BIENwhite.svg" alt=""><img class=" fixed top-8 left-2 lg:hidden" src="../static/BIEN.svg" alt=""></button>
+    <button class=" lg:hidden relative justify-self-center bottom-8 text-xs font-normal content-center"> Get help sign in </button>
 
-      
-  
-  </template>
+  </div>
+    
+
+</template>
 
 
 <script setup>

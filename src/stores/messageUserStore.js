@@ -12,12 +12,53 @@ export let useMessageUserStore = defineStore({
                 messages:[
                     {
                         isYour:false,
+                        content:"Salam",
+                        time:"20:00"
+                    },
+                    {
+                        isYour:true,
+                        content:"Sagol"
+                    },
+                    {
+                        isYour:true,
+                        content:"Test"
+                    },
+                    {
+                        isYour:false,
+                        content:"Test2"
+                    },
+                    {
+                        isYour:false,
                         content:"Salam"
                     },
                     {
                         isYour:true,
                         content:"Sagol"
-                    }
+                    },
+                    {
+                        isYour:true,
+                        content:"Test"
+                    },
+                    {
+                        isYour:false,
+                        content:"Test2"
+                    },
+                    {
+                        isYour:false,
+                        content:"Salam"
+                    },
+                    {
+                        isYour:true,
+                        content:"Sagol"
+                    },
+                    {
+                        isYour:true,
+                        content:"Test"
+                    },
+                    {
+                        isYour:false,
+                        content:"Test2"
+                    },
                 ]
             },
             {
