@@ -18,7 +18,7 @@
                     <button v-if="LoginStore.isConnected" class=" lg:hidden"> <img class=" self-center" src="../static/magecglassicon.svg" alt=""></button>
                 
                     <button class=" self-center hidden lg:flex" v-if="LoginStore.isConnected"><img class=" self-center" src="../static/icon_bell_.svg" alt=""></button>
-                <button class=" self-center hidden lg:flex" v-if="LoginStore.isConnected"><img class=" self-center" src="../static/icon_mail_.svg" alt=""></button>
+                <button @click="$router.push('/mymessage')" class=" self-center hidden lg:flex" v-if="LoginStore.isConnected"><img class=" self-center" src="../static/icon_mail_.svg" alt=""></button>
                 <button class=" self-center lg:hidden" v-if="LoginStore.isConnected"><img class=" self-center" src="../static/mailIconMobile.svg" alt=""></button>
                 <button class=" self-center lg:hidden" v-if="LoginStore.isConnected"><img class=" self-center" src="../static/bellIconMobile.svg" alt=""></button>
                 </div>

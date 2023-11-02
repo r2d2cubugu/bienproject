@@ -13,18 +13,22 @@
                
             </div>
             
-        <div class=" overflow-y-scroll h-[60vh] flex flex-col w-[100%] relative">
+        <div class=" overflow-y-scroll h-[60vh] flex flex-col items-start w-[100%] relative">
         <!-- <div class=" flex flex-col">
             <div v-for=" con in contact.messages" :key="con.id">
              {{ con }}
             </div>
         </div> -->
-        <div class=" px-[50%] py-2"><p>{{ contact.messages[0].time }}</p></div>
-        <div v-for=" chat in contact.messages">
-            <div class=" flex flex-wrap w-80" :class="chat.isYour ? 'mb-12' : 'mb-3'"  >
-            <img class=" ml-24 mr-3" v-if="!chat.isYour" :src=contact.profil alt=""><p class=" py-[1%] px-[1%] flex flex-wrap " :class="chat.isYour ? ' bg-green-900 text-white absolute right-6  rounded-bl-3xl rounded-tl-3xl rounded-tr-xl' : ' bg-[#CECECE] rounded-br-3xl rounded-tr-3xl rounded-tl-xl'" >{{ chat.content }}</p>
+        <div class="flex flex-col w-full border border-blue-400">
+          <!-- <div class=" px-[50%] py-2"><p>{{ contact.messages[0].time }}</p></div> -->
+            <div v-for=" chat in contact.messages" class=" flex" :class="[chat.isYour ? 'self-end' : '']">
+                <div class="flex self-end break-words border border-red-500 " :class="chat.isYour ? 'mb-[7%]' : 'mb-3'"  >
+                <img class="mr-3" v-if="!chat.isYour" :src=contact.profil alt=""> 
+                <p class=" h-auto p-2 resize-none border break-all" :class="chat.isYour ? ' bg-green-900 text-white align-bottom self-end justify-end justify-self-end  rounded-bl-3xl rounded-tl-3xl rounded-tr-xl' : ' bg-[#CECECE] rounded-br-3xl rounded-tr-3xl rounded-tl-xl'" >{{ chat.content }}</p>
+                </div>
             </div>
         </div>
+
     </div>
     <div class=" sticky pl-16 pr-36 py-7 bottom-0 flex border-y-2 bg-white gap-2">
         <img src="./../../static/paperclipIcon.svg" alt="">

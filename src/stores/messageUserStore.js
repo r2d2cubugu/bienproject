@@ -68,12 +68,13 @@ export let useMessageUserStore = defineStore({
                 messages:[
                     {
                         isYour:false,
-                        content:"Salam"
+                        content:"FUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIEB",
+                        time:"20:01"
                     },
                     {
                         isYour:true,
                         content:"Sagol"
-                    }
+                    },
                 ]
             },
             {

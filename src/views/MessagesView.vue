@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class=" w-full h-full">
+        <div class=" w-full h-fu">
             <RouterView class=" w-full"></RouterView>
         </div>
     </div>
