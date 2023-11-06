@@ -21,17 +21,17 @@
         </div> -->
         <div class="flex flex-col w-full border border-blue-400">
           <!-- <div class=" px-[50%] py-2"><p>{{ contact.messages[0].time }}</p></div> -->
-            <div v-for=" chat in contact.messages" class=" flex" :class="[chat.isYour ? 'self-end' : '']">
+            <div v-for=" chat in contact.messages" class=" max-w-[66.6666666%] flex flex-shrink-0" :class="[chat.isYour ? 'self-end' : '']">
                 <div class="flex self-end break-words border border-red-500 " :class="chat.isYour ? 'mb-[7%]' : 'mb-3'"  >
-                <img class="mr-3" v-if="!chat.isYour" :src=contact.profil alt=""> 
-                <p class=" h-auto p-2 resize-none border break-all" :class="chat.isYour ? ' bg-green-900 text-white align-bottom self-end justify-end justify-self-end  rounded-bl-3xl rounded-tl-3xl rounded-tr-xl' : ' bg-[#CECECE] rounded-br-3xl rounded-tr-3xl rounded-tl-xl'" >{{ chat.content }}</p>
+                <img class="mr-3 flex-shrink-0" v-if="!chat.isYour" :src=contact.profil alt=""> 
+                <p class=" h-auto p-2 resize-none border break-all" :class="chat.isYour ? ' bg-green-900 text-white align-bottom  rounded-bl-3xl rounded-tl-3xl rounded-tr-xl' : ' bg-[#CECECE] rounded-br-3xl rounded-tr-3xl rounded-tl-xl'" >{{ chat.content }}</p>
                 </div>
             </div>
         </div>
 
     </div>
     <div class=" sticky pl-16 pr-36 py-7 bottom-0 flex border-y-2 bg-white gap-2">
-        <img src="./../../static/paperclipIcon.svg" alt="">
+        <img class="" src="./../../static/paperclipIcon.svg" alt="">
     <textarea class=" pr-3 py-4 resize-none border border-black w-[610px]"  v-model="myMessage" placeholder="Type something..." type="text"> </textarea>
     <button @click="sendMessage(contact.id)" class=" bg-[#1473E6] text-white h-min py-1 px-2 rounded-full self-center" >Send</button>
 </div>

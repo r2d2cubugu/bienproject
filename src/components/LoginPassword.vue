@@ -29,11 +29,11 @@
               
             </div>
             <div class=" flex flex-col">
-            <button class=" hidden mt-4 lg:flex text-[#1473E6]">Get help sign in</button>
-            <button @click="LoginStore.toComponent(LoginHome)" class=" hidden mt-4 lg:flex text-[#1473E6]">Sign to another account</button>
+            <button @click="LoginStore.toComponent('ResetPass')" class=" hidden mt-4 lg:flex text-[#1473E6]">Get help sign in</button>
+            <button @click="LoginStore.toComponent('LoginHome')" class=" hidden mt-4 lg:flex text-[#1473E6]">Sign to another account</button>
             </div>
             <div class=" lg:hidden p-0 gap-0">
-            <button class="text-[#1473E6] text-[9px] block mb-0">Reset your password</button>
+            <button @click="LoginStore.toComponent('ResetPass')" class="text-[#1473E6] text-[9px] block mb-0">Reset your password</button>
             <button class="text-[#1473E6] text-[9px]">Sign in to a different account</button>
   
             </div>

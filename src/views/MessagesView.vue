@@ -9,7 +9,7 @@
             <div class=" flex-col min-h-[50vh]">
                 <div v-for=" user in messageUserStore.chat" :key="user.id">
                     
-                        <button @click="$router.push(`/mymessage/${user.id}`)" class=" border-b-2 pl-2 flex justify-start text-sm py-3.5 w-full">
+                        <button @click="$router.push(`/mymessage/${user.id}`), select()" class=" border-b-2 pl-2 flex justify-start text-sm py-3.5 w-full">
                             <!-- <pre>{{ contact }}</pre> -->
                             <img class=" w-12 h-12" :src=user.profil alt="">
                             <div class=" ml-5">
@@ -26,6 +26,7 @@
             </div>
         </div>
         <div class=" w-full h-fu">
+            <p class=" justify-self-center self-center" v-if="!mesagSelected"> Salam</p>
             <RouterView class=" w-full"></RouterView>
         </div>
     </div>
@@ -37,6 +38,14 @@
 import {ref} from "vue"
 import { useMessageUserStore } from '../stores/messageUserStore';
 let messageUserStore = useMessageUserStore()
+
+let mesagSelected = true;
+
+messageSelected = false
+
+function select(){
+    mesagSelected = true
+}
 
 
 const date = ref(new Date())
