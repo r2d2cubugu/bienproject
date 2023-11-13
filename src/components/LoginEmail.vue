@@ -13,6 +13,7 @@ import { RouterLink } from 'vue-router';
             <div class=" flex flex-col gap-4">
                 <input type="email" @keydown.enter="changeToPassword"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 lg:rounded-lg lg:border-black" placeholder="Email address" v-model="mail" >
                 <p v-if="msg" class=" text-red-700 font-bold text-sm">{{ msg }}</p>
+                <p v-if="LoginStore.isChanged" class=" text-blue-700 font-bold text-sm">Hesabinizin parolu ugurla deyisdirildi</p>
                 <button @keydown.enter="changeToPassword" @click=changeToPassword() class=" bg-[#1877F2] self-end  text-white py-1.5 px-3.5 rounded-full lg:rounded-lg">Contuine</button>
             </div>
             <div

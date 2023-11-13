@@ -20,7 +20,7 @@ import { RouterLink } from 'vue-router';
             </div>
             <div class=" flex self-end gap-3 mt-16">
               <button @click="LoginStore.toComponent('LoginPassword')">Back</button>
-              <button @click="newCode()">Resend code <span>{{ timer }}</span></button>
+              <button @click="newCode()">Resend code <span v-if="timer">{{ timer }}</span></button>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@ for (let i = 0; i < 6; i++) {
 }
 let passInt = ref(parseInt(passStr.value))
   if (passInt.value == kod.value) {
-    alert("Salam")
+    LoginStore.toComponent("LoginReset")
   }
   
 console.log("edede bax", passInt.value);

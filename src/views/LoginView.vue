@@ -12,6 +12,7 @@ import {ref,computed} from "vue"
 import LoginEmail from '../components/LoginEmail.vue';
 import LoginPassword from "../components/LoginPassword.vue";
 import LoginResetPass from "../components/LoginResetPass.vue";
+import LoginReset from "../components/LoginReset.vue";
 import { useLoginStore } from "../stores/LoginStore";
 
 let isComponent=computed(()=>{
@@ -19,6 +20,8 @@ let isComponent=computed(()=>{
     return LoginPassword
    }else if(LoginStore.isComponent == "ResetPass"){
     return LoginResetPass
+   }else if(LoginStore.isComponent == "LoginReset"){
+    return LoginReset
    }
    else{
     return LoginEmail

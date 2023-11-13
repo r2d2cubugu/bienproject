@@ -15,7 +15,8 @@ export let useLoginStore = defineStore({
         ],
         connectedMail:"",
         connectedPass:"",
-        isConnected:false
+        isConnected:false,
+        isChanged:false
     }),
     actions:{
         toComponent(component){
@@ -28,5 +29,11 @@ export let useLoginStore = defineStore({
         updatePassword(password){
             this.password = password
         },
+        changedPassword(){
+            this.isChanged = true;
+            setTimeout(() => {
+                this.isChanged = false
+            }, 3000);
+        }
     }
 })
