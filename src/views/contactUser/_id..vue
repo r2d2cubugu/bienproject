@@ -47,6 +47,8 @@ const route = useRoute()
 const router = useRouter()
 const messageUserStore = useMessageUserStore()
 
+messageUserStore.isSelected = true
+
 
 const contact =ref(messageUserStore.chat.find(el => el.id == route.params.id))
 watch(()=>route.params.id,(newValue)=>{

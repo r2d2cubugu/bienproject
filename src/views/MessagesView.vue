@@ -9,7 +9,7 @@
             <div class=" flex-col min-h-[50vh]">
                 <div v-for=" user in messageUserStore.chat" :key="user.id">
                     
-                        <button @click="$router.push(`/mymessage/${user.id}`), select()" class=" border-b-2 pl-2 flex justify-start text-sm py-3.5 w-full">
+                        <button @click="$router.push(`/mymessage/${user.id}`), select(user.id)" :class="user.isSelected ? 'text-blue-700' : ''" class=" border-b-2 pl-2 flex justify-start text-sm py-3.5 w-full">
                             <!-- <pre>{{ contact }}</pre> -->
                             <img class=" w-12 h-12" :src=user.profil alt="">
                             <div class=" ml-5">
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class=" w-full h-fu">
-            <p class=" justify-self-center self-center" v-if="!mesagSelected"> Salam</p>
+            <p class=" justify-self-center self-center" v-if="!messageUserStore.isSelected"> Salam</p>
             <RouterView class=" w-full"></RouterView>
         </div>
     </div>
@@ -36,15 +36,22 @@
 
 <script setup>
 import {ref} from "vue"
+import { useLoginStore } from "../stores/LoginStore";
 import { useMessageUserStore } from '../stores/messageUserStore';
 let messageUserStore = useMessageUserStore()
+const loginStore = useLoginStore()
+loginStore.isConnected = true
 
-let mesagSelected = true;
 
-messageSelected = false
-
-function select(){
-    mesagSelected = true
+function select(id){
+    let selected = messageUserStore.chat.find(el => el.id == id);
+    let unSelected = messageUserStore.chat.filter(el => el.id != id);
+    selected.isSelected = true;
+    for (let i = 0; i < unSelected.length; i++) {
+        unSelected[i].isSelected = false;
+        
+    }
+    messageUserStore.isSelected = true
 }
 
 

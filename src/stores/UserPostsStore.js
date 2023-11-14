@@ -19,8 +19,71 @@ export let useUserPostsStore = defineStore({
     },
     userPosts:[
         {
-            photos:"../static/mostLiked.png"
+            photoLink:"../../src/static/mostLiked.png",
+            comments:"qq",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/latestPhoto.png",
+            comments:"aa",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/Rectangle 16.png",
+            comments:"qq",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/latestPhoto.png",
+            comments:"aa",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/mostLiked.png",
+            comments:"qq",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/Rectangle 16.png",
+            comments:"qq",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/latestPhoto.png",
+            comments:"aa",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/mostLiked.png",
+            comments:"qq",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/latestPhoto.png",
+            comments:"aa",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/Rectangle 16.png",
+            comments:"qq",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/mostLiked.png",
+            comments:"qq",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/Rectangle 16.png",
+            comments:"qq",
+            likes:""
+        },
+        {
+            photoLink:"../../src/static/latestPhoto.png",
+            comments:"aa",
+            likes:""
         }
+        
     ]
     })
 })

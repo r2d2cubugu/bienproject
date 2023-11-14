@@ -4,10 +4,12 @@ export let useMessageUserStore = defineStore({
     id:"Message store",
     state:()=>({
         name:"Salam",
+        isSelected: false,
         chat:[
             {
                 name:"Hesen",
                 id:1,
+                isSelected:false,
                 profil:"../../src/static/contact1.png",
                 messages:[
                     {
@@ -64,6 +66,7 @@ export let useMessageUserStore = defineStore({
             {
                 name:"Eli",
                 id:2,
+                isSelected: false,
                 profil:"../../src/static/contact2.png",
                 messages:[
                     {
@@ -80,6 +83,7 @@ export let useMessageUserStore = defineStore({
             {
                 name:"Huseyn",
                 id:3,
+                isSelected: false,
                 profil:"../../src/static/contact3.png",
                 messages:[
                     {

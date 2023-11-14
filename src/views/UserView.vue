@@ -1,6 +1,14 @@
 <template>
-    <div v-if=" loginStore.isConnected" class=" lg:py-20 lg:px-8 px-2">
-        <div class=" flex flex-col lg:flex-row">
+
+<RouterView class=" self-center justify-self-center justify-center absolute  h-[100%] w-full inset-0 flex  z-20">
+
+</RouterView>
+    
+    <div v-if=" loginStore.isConnected" class=" lg:py-20 lg:px-8 px-2 flex flex-col relative">
+        
+        <div class=" ">
+            
+            <div class=" flex flex-col lg:flex-row">
             <div class=" relative">
                 <div class=" relative">
                 <img class=" w-84   h-80 lg:w-64 lg:h-64" src="../static/profil.png" alt="">
@@ -10,16 +18,16 @@
                     <div class=" hidden lg:inline-flex lg:w-64 w-28 lg:h-8 lg:py-2 rounded-2xl border border-black justify-center bg-none lg:bg-white items-center gap-40 ">
     <p class="w-[67px] text-black text-sm font-normal ">Followers </p>  <p class="text-black text-sm font-normal ">26</p> </div>
                     <div class=" lg:w-64 hidden lg:inline-flex w-28 lg:h-8 lg:py-2 rounded-2xl border border-black justify-center bg-none lg:bg-white items-center gap-40">
-    <p class="w-[67px] text-black text-sm font-normal ">Followers </p>  <p class="text-black text-sm font-normal ">26</p> </div>
+    <p class="w-[67px] text-black text-sm font-normal ">Followging </p>  <p class="text-black text-sm font-normal ">47</p> </div>
 
     <div class="w-[300px] h-[41.89px] relative justify-center items-center gap-[5px] flex pl-[5%] lg:hidden">
         <div class="h-10 px-3 py-2.5 rounded-3xl border border-white justify-center items-center gap-[30px] flex">
-        <p class="text-white text-lg font-normal ">Followers </p>
-        <p class="text-white text-lg font-normal ">21</p>
+        <p class="text-white text-lg font-normal ">Followgin </p>
+        <p class="text-white text-lg font-normal ">47</p>
     </div>
     <div class="h-10 px-3 py-2.5 rounded-3xl border border-white justify-center items-center gap-[30px] flex">
-        <p class="text-white text-lg font-normal ">Following </p>
-        <p class="text-white text-lg font-normal ">47</p>
+        <p class="text-white text-lg font-normal ">Followers </p>
+        <p class="text-white text-lg font-normal ">26</p>
     </div>
 </div>
                 </div>
@@ -41,29 +49,39 @@
                 </div>
             </div>
             <div class=" hidden lg:gap-2 absolute right-0 lg:flex">
-                <button class=" cursor-pointer" @click=" alert('s')"><img class=" w-8" src="../static/add-icon.png" alt=""></button>
                 
                 <button class=" cursor-pointer" @click=" alert('s')"><img src="../static/iconEdit.svg" alt=""></button>
             </div>
         </div>
+        
         <div class=" grid grid-cols-1 lg:grid-cols-3 gap-2 w-full mt-11 lg:mt-40">
-            <div v-for=" index in 12">
-                <button class=" w-full">
-                    <!-- Storedan goture bilmedim -->
-                    <img class=" w-[100%]" src="../static/latestPhoto.png">
-       </button>
+            <div  v-for=" photos in userPostsStore.userPosts">
+                <RouterLink to="/post" class=" w-full">
+                    <img class=" w-[100%]" :src=photos.photoLink>
+                    <!-- <p>{{ photos.comments }}</p> -->
+       </RouterLink>
          </div>
+        </div>
         </div>
     </div>
     <div v-if=" !loginStore.isConnected">
-       sagol
+        <div class=" flex h-screen justify-center self-center items-center ">
+            Profilinize baxmaq ucun zehmet olmasa hesabiniza giris eleye, hesabiniz yoxdusa qeydiyyatdan kecin.
+        </div>
     </div>
 </template>
 
 <script setup>
+import { RouterView } from 'vue-router';
 import { useLoginStore } from '../stores/LoginStore';
 import { useUserPostsStore } from '../stores/UserPostsStore';
+import {ref,computed,watch} from "vue"
 let loginStore = useLoginStore()
+let isComponent = ref("");
+
+
+
+
 let userPostsStore = useUserPostsStore()
 
 loginStore.isConnected = true

@@ -8,6 +8,7 @@ import User from "./views/UserView.vue"
 import Contact from "./views/ContactView.vue"
 import Message from "./views/MessagesView.vue"
 import contactUser from "./views/contactUser/_id..vue"
+import myPost from "./views/myPost.vue"
 
 const routes = [
     {
@@ -37,6 +38,12 @@ const routes = [
         path:"/myprofile",
         name:"Userprofile",
         component:User,
+        children:[
+            {
+                path:"/post",
+                component:myPost
+            }
+        ]
         
     },
     {
