@@ -14,7 +14,7 @@ import { RouterLink } from 'vue-router';
             <div class=" flex gap-2">
              <div v-for="index in 6">
               <div class="w-12 h-12 ">
-                <input value="" @keydown="goNext(index)" maxlength="1" class="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-black text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700" type="sub" name="" :id=index>
+                <input value="" @keydown="goNext(index)" maxlength="1" class="w-full h-full flex flex-col items-center justify-center text-center px-2 outline-none rounded-xl border border-black text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700" type="sub" name="" :id=index>
               </div>
             </div>
             </div>
@@ -37,10 +37,12 @@ import { RouterLink } from 'vue-router';
 import { ref } from 'vue';
 import { useLoginStore } from '../stores/LoginStore';
 import { parseQuery } from 'vue-router';
+
+
 let timer = ref(0)
 let LoginStore = useLoginStore()
-let kod = ref(Math.floor(Math.random() * 1000000 + 1))
-console.log(kod.value);
+// let kod = ref(Math.floor(Math.random() * 1000000 + 1))
+// console.log(kod.value);
 let test = "salam"
 let input6 = document.getElementById(6)
 let birc = ref("")
@@ -62,6 +64,11 @@ function newCode() {
   //     break
   //   }
   // }
+  function createOTP(){
+    kod = ref(Math.floor(Math.random() * 1000000 + 1))
+  }
+  
+
   setInterval(() => {
       if (timer.value > 0) {
         timer.value--;

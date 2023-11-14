@@ -16,12 +16,15 @@ export let useLoginStore = defineStore({
         connectedMail:"",
         connectedPass:"",
         isConnected:false,
-        isChanged:false
+        isChanged:false,
     }),
     actions:{
         toComponent(component){
             console.log("componentede bax",component)
             this.isComponent = component
+        },
+        toComponentPost(component){
+            this.isComponentPost = component
         },
         updateEmail(email){
             this.email = email

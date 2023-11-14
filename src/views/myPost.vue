@@ -1,11 +1,9 @@
 <template>
-    
-    <div class=" inset-0 flex h-screen absolute top-[0%] z-50">
-         
-        <div class=" bg-[#000000B2] opacity-60 w-[100%] h-screen fixed  top-0 inset-0" @click="$router.push('/myprofile')">
-</div>
-<div class="  fixed top-9">
-    <swiper
+  <div class="fixed"
+  >
+    <div class="bg-blue-300 overflow-hidden h-screen flex items-center p-10 border border-white">
+
+      <swiper
     :effect="'coverflow'"
     :grabCursor="true"
     :centeredSlides="true"
@@ -14,21 +12,47 @@
       rotate: 50,
       stretch: 0,
       depth: 100,
-      modifier: 3,
+      modifier: 1,
       slideShadows: true,
     }"
-    :pagination="true"
+    :pagination="false"
     :modules="modules"
-    class="mySwiper top-9 w-[8%]"
+    class="mySwiper"
   >
+    <swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <div class="absolute z-20 left-0 bottom-0 w-full bg-red-400">test here</div>
 
-        <swiper-slide v-for="(post,index) in userPostsStore.userPosts" class=" w-min" :key="index"
-      ><img class=" h-20 w-80"
-        :src=post.photoLink /></swiper-slide
-    >
+        </swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-2.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-4.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-5.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-6.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-7.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-8.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img src="https://swiperjs.com/demos/images/nature-9.jpg"
+    /></swiper-slide>
   </swiper>
-</div>
-    </div>
+  </div>
+  </div>
    
 </template>
 <script>
@@ -40,8 +64,6 @@
 
   import 'swiper/css/effect-coverflow';
   import 'swiper/css/pagination';
-
-  import '../style.css';
 
   // import required modules
   import { EffectCoverflow, Pagination } from 'swiper/modules';
@@ -58,8 +80,25 @@
     },
   };
 </script>
-<script setup>
-import { useUserPostsStore } from '../stores/UserPostsStore';
-const userPostsStore = useUserPostsStore()
 
-</script>
+<style scoped>
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+</style>

@@ -1,8 +1,9 @@
 <template>
 
-<RouterView class=" self-center justify-self-center justify-center absolute  h-[100%] w-full inset-0 flex  z-20">
+<component class=" z-20" :is=isComponent>
 
-</RouterView>
+
+</component>
     
     <div v-if=" loginStore.isConnected" class=" lg:py-20 lg:px-8 px-2 flex flex-col relative">
         
@@ -56,10 +57,10 @@
         
         <div class=" grid grid-cols-1 lg:grid-cols-3 gap-2 w-full mt-11 lg:mt-40">
             <div  v-for=" photos in userPostsStore.userPosts">
-                <RouterLink to="/post" class=" w-full">
+                <button @click="userPostsStore.isComponentPost='myPost'" class=" w-full">
                     <img class=" w-[100%]" :src=photos.photoLink>
                     <!-- <p>{{ photos.comments }}</p> -->
-       </RouterLink>
+                </button>
          </div>
         </div>
         </div>
@@ -72,15 +73,19 @@
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router';
-import { useLoginStore } from '../stores/LoginStore';
-import { useUserPostsStore } from '../stores/UserPostsStore';
+import { RouterView } from 'vue-router'
+import { useLoginStore } from '../stores/LoginStore'
+import { useUserPostsStore } from '../stores/UserPostsStore'
+import myPost from '../components/myPosts.vue'
 import {ref,computed,watch} from "vue"
 let loginStore = useLoginStore()
-let isComponent = ref("");
-
-
-
+console.log("loginstore goster",loginStore.isComponentPost)
+let isComponent=computed(()=>{
+   if(userPostsStore.isComponentPost=="myPost"){
+    return myPost
+   }else{
+    return ''
+   }})
 
 let userPostsStore = useUserPostsStore()
 

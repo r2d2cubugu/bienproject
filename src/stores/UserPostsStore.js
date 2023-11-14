@@ -11,6 +11,7 @@ export let useUserPostsStore = defineStore({
             like:555,
             
     },
+    isComponentPost: "",
     likedPosts:{
         userProfil:"../static/userProfil.svg",
         name:"Hesen Hesenli",
@@ -85,5 +86,8 @@ export let useUserPostsStore = defineStore({
         }
         
     ]
-    })
+    }),
+    actions:{
+        
+    }
 })
