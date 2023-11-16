@@ -4,13 +4,14 @@
     <button class=" bg-[#000000B2] h-screen w-full fixed top-0 cursor-none" @click="userPostsStore.isComponentPost = null">
       
     </button>
-      <div class=" overflow-hidden h-screen flex items-center p-10 border border-white">
+      <div class=" overflow-hidden h-20 flex items-center p-10 border border-white">
   
         <swiper
       :effect="'coverflow'"
       :grabCursor="true"
       :centeredSlides="true"
       :slidesPerView="'auto'"
+      :initialSlide="lastSlideIndex"
       :coverflowEffect="{
         rotate: 50,
         stretch: 0,
@@ -22,15 +23,75 @@
       :modules="modules"
       class="mySwiper"
     >
-      ><swiper-slide v-for="post in userPostsStore.userPosts" :key="post.photoLink"
+      ><swiper-slide class=""  v-for="post in userPostsStore.userPosts" :key="post.photoLink"
         >
-        <div class="absolute z-20 left-0 bottom-0 w-full bg-red-400">test here</div>
-        
-        <img
-          :src=post.photoLink /></swiper-slide
-      >
+        <div class=" relative">
+
+          <img class=""
+          :src=post.photoLink />
+          <div v-if="post.isClicked" class=" z-[1000000] text-white absolute left-0 bg-red-400 top-0 w-full h-full overflow-scroll">
+            <button @click="post.isClicked = false" class=" absolute">X</button>
+            <div class=" flex flex-col top-5 absolute left-0">
+              <div v-for="comment in post.comments">
+                <div class=" flex border ">
+                  <!-- {{ comment.profil }} -->
+                  <!-- <img class=" rounded-full" width="20" height="20" :src=comment.profil alt=""> -->
+                  <div class=" flex justify-center items-center">
+
+                    <div class=" w-8 h-8 rounded-full">
+                    <img class=" w-8 h-8 rounded-full" src="https://imgs.search.brave.com/GGTJI_H5dVD0LtQEKp0AOkDjxYfSYenyuRsKN-HiswI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/MzcyMDI0OS9waG90/by9wcm9maWxlLW9m/LWEtZmVtYWxlLWRv/Y3Rvci5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9LXUydDgw/SlMxUUJlTUVNcFp0/MUE1X1o2a1NPWGlr/aFluUUR2c3dLZHZS/bz0" alt="">
+                    </div>
+                  </div>
+      
+                  <div class=" flex flex-col w-full border">
+
+                    <p class=" w-full"> {{ comment.name }}</p>
+                    <p class=" w-full"> {{ comment.descp }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class=" fixed bottom-0 bg-black self-center h-min w-full">
+              <div class=" flex">
+                <div class=" w-16 rounded-full">
+                <img :src=userPostsStore.myProfile class=" w-max" alt="">
+                </div>
+                <textarea name="" class=" resize-none h-16 text-black" id="" cols="30" rows="8"></textarea>
+              </div>
+              <button></button>
+            </div>
+          </div>
+        </div>
+
+        <div class=" flex flex-col">
+          <div class=" flex justify-between">
+          <div class=" flex z-[100] flex-wrap text-center align-middle self-center  text-white font-bold">
+            <div v-for="tag in post.tags">
+              {{ tag }}
+            </div>
+          </div>
+          <div class=" flex">
+            <button>
+            <img class=" w-7" src="../static/postLike.svg" alt="">
+            </button>
+            <button v-if="!post.isClicked" @click="clicked(post.id);">
+            <img class=" w-7" src="../static/postComment.svg" alt="">
+            </button>
+            <button>
+            <img class=" w-7" src="../static/postSend.svg" alt="">
+            </button>
+          </div>
+          
+        </div>
+
+        </div>
+        </swiper-slide
+        >
     </swiper>
     </div>
+
+
     </div>
      
   </template>
@@ -38,6 +99,7 @@
     // Import Swiper Vue.js components
     import { Swiper, SwiperSlide } from 'swiper/vue';
     import { useUserPostsStore } from '../stores/UserPostsStore';
+    import {defineProps, ref} from 'vue'
   
     // Import Swiper styles
     import 'swiper/css';
@@ -53,28 +115,70 @@
         Swiper,
         SwiperSlide,
       },
+      computed: {
+    lastSlideIndex() {
+      // Calculate the index of the last slide
+      return this.selectedPost - 1;
+    },
+  },
+  mounted(){
+    // this.toggleComment()
+  },
+
       setup() {
         let userPostsStore = useUserPostsStore()
+        let selectedComs = ref([])
+        let selectedPost = userPostsStore.selectedPost;
+        function clicked(id) {
+          userPostsStore.closeComments(id)
+          if(!userPostsStore.userPosts.find(el => el.id == id).isClicked){
+            userPostsStore.userPosts.find(el => el.id == id).isClicked = true
+          selectedComs.value = userPostsStore.userPosts.find(el => el.id == id).comments;
+          // alert('s')
+          }else{
+            userPostsStore.userPosts.find(el => el.id == id).isClicked = false
+          // alert('f')
+          }
+        }
+        // function toggleComment(){
+        //   let swipe_slide=document.getElementsByClassName("swiper-slide ")[0]
+        //   if(isClicked.value==false){
+        //     swipe_slide.style.height="300px"
+        //     console.log("iwe dusdu")
+
+        //   }else{
+        //     console.log("hele iwe dusmeyib")
+        //   }
+        // }
         return {
-          modules: [EffectCoverflow, Pagination],userPostsStore
+          modules: [EffectCoverflow, Pagination],userPostsStore,selectedPost, clicked, selectedComs
         };
       },
     };
   </script>
   
   <style scoped>
-  
+  ::-webkit-scrollbar{
+    width: 3px;    
+  }
+  ::-webkit-scrollbar-track{
+    background-color: #d1e5ff;;    
+  }
   .swiper {
     width: 100%;
+    background-color: black;
     padding-top: 50px;
     padding-bottom: 50px;
+    left: 0;
+    position: fixed;
+    top: 10%;
   }
   
   .swiper-slide {
     background-position: center;
     background-size: cover;
     width: 500px;
-    height: 500px;
+    /* height: 300px; */
     position: relative;
   }
   

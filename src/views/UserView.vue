@@ -57,7 +57,7 @@
         
         <div class=" grid grid-cols-1 lg:grid-cols-3 gap-2 w-full mt-11 lg:mt-40">
             <div  v-for=" photos in userPostsStore.userPosts">
-                <button @click="userPostsStore.isComponentPost='myPost'" class=" w-full">
+                <button @click="userPostsStore.isComponentPost='myPost';userPostsStore.selectedPost = photos.id" class=" w-full">
                     <img class=" w-[100%]" :src=photos.photoLink>
                     <!-- <p>{{ photos.comments }}</p> -->
                 </button>

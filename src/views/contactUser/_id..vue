@@ -13,7 +13,7 @@
                
             </div>
             
-        <div class=" overflow-y-scroll h-[60vh] flex flex-col items-start w-[100%] relative">
+        <div class=" overflow-y-scroll h-[60vh] flex flex-col items-start px-10 pt-4 pb-16 w-[100%] relative">
         <!-- <div class=" flex flex-col">
             <div v-for=" con in contact.messages" :key="con.id">
              {{ con }}
@@ -43,11 +43,14 @@
 import { useMessageUserStore } from '../../stores/messageUserStore';
 import {ref, watch} from "vue"
 import { useRoute, useRouter } from 'vue-router';
+
 const route = useRoute()
 const router = useRouter()
 const messageUserStore = useMessageUserStore()
 
-messageUserStore.isSelected = true
+if(messageUserStore.isSelected == false){
+    router.push('/mymessage')
+}
 
 
 const contact =ref(messageUserStore.chat.find(el => el.id == route.params.id))

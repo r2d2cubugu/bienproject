@@ -41,6 +41,11 @@ import { useMessageUserStore } from '../stores/messageUserStore';
 let messageUserStore = useMessageUserStore()
 const loginStore = useLoginStore()
 loginStore.isConnected = true
+messageUserStore.isSelected = false
+for (let i = 0; i < messageUserStore.chat.length; i++) {
+    messageUserStore.chat[i].isSelected = false
+    
+}
 
 
 function select(id){

@@ -2,7 +2,7 @@
     <div class=" flex flex-col h-screen gap-12">
       <img class="  hidden lg:flex h-max absolute top-32 left-20" src="../static/bienLogin.svg" alt="">
       <div class=" lg:bg-[url('./static/background2.png')] lg:w-full lg:h-[100vh] lg:px-20 lg:py-44 lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-end">
-          <div class=" pt-40 pb-8 lg:py-20 px-5 lg:px-24 bg-white rounded-md h-max w-[100%] lg:w-max">
+          <div class=" pt-40 pb-8 lg:py-20 px-5 lg:px-16 bg-white rounded-md h-max w-[100%] lg:w-max">
               <div class=" mb-8 lg:mb-10">
                               <h4 class=" text-2xl lg:text-[32px] font-bold mb-2 self-center hidden lg:flex">Enter your password</h4>
                               <h4 class=" text-2xl lg:text-[22px] self-center font-bold mb-2">{{ LoginStore.connectedMail }}</h4>
@@ -16,6 +16,7 @@
 
                   </div>
               </div>
+               <p class=" font-bold text-red-600" v-if="msg"> {{ msg }}</p>
               <!-- Flowbitedan goturdum -->
               <div
               class=" flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
@@ -54,14 +55,17 @@
   import {ref} from "vue"
   import {useRouter} from "vue-router"
   import { useLoginStore } from "../stores/LoginStore";
+  import { useUserPostsStore } from "../stores/UserPostsStore";
   // let realEmail=ref()
   const LoginStore = useLoginStore()
+  const userPostsStore = useUserPostsStore()
   let router = useRouter()
   let checkPassword = ref()
   let checkAccount = ref()
   let password = ref(12345)
   let testPassword=ref()
   let msg = ref()
+  let isFailed = ref(false)
   function goHomePage(){
     if(password.value = null){
     msg.value = "Parolunuz yanlisdir"
@@ -83,6 +87,7 @@ else{
       // alert("ugurulu")
       router.push('/')
       LoginStore.connectedPass = testPassword.value
+      userPostsStore.myName = LoginStore.connectedMail
       testPassword.value = null
       LoginStore.isConnected = true
 

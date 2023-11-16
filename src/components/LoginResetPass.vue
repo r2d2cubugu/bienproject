@@ -34,14 +34,27 @@ import { RouterLink } from 'vue-router';
 
 
 <script setup>
-import { ref } from 'vue';
+import { ref,watch } from 'vue';
 import { useLoginStore } from '../stores/LoginStore';
 import { parseQuery } from 'vue-router';
 
 
 let timer = ref(0)
 let LoginStore = useLoginStore()
-// let kod = ref(Math.floor(Math.random() * 1000000 + 1))
+let kod = ref()
+function createOTP(){
+  const characters = "1234567890";
+      let newPassword = "";
+      for (let i = 0; i < 6; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        newPassword += characters[randomIndex];
+      }
+      kod.value = parseInt(newPassword);
+      console.log(kod.value);
+
+  }
+  
+createOTP()
 // console.log(kod.value);
 let test = "salam"
 let input6 = document.getElementById(6)
@@ -53,33 +66,32 @@ let besc = ref("")
 let altic = ref("")
 let variables = ref([birc.value, ikic.value, ucc.value, dordc.value, besc.value, altic.value])
 let isClicked = ref(false)
-function newCode() {
+
+
+function newCode(){
   if(!isClicked.value){
-    alert("y")
   isClicked.value = true
   timer.value = 300
+  createOTP()
   // while (isClicked = true) {
   //   timer--
   //   if (timer == 0) {
   //     break
   //   }
   // }
-  function createOTP(){
-    kod = ref(Math.floor(Math.random() * 1000000 + 1))
-  }
-  
+ 
+
 
   setInterval(() => {
       if (timer.value > 0) {
         timer.value--;
       } else {
-        kod.value = Math.floor(Math.random() * 1000000 + 1)
         isClicked.value = false
       }
-    }, 1000);}else{
-      alert("")
-    }
+    }, 1000);}
 }
+
+
 function goNext(x){
   if (document.getElementById(x).lenght == document.getElementById(x).maxlength) {
     setTimeout(() => {
