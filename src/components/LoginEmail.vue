@@ -3,9 +3,9 @@ import { RouterLink } from 'vue-router';
 <template>
   <div class=" flex flex-col h-screen gap-12 ">
     <!-- <div class=" lg:bg-[url('./static/LoginBg.png')] lg:w-full lg:h-screen lg:px-20 lg:py-52 lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-between"> -->
-      <img class=" hidden lg:flex h-max absolute top-32 left-20" src="../static/bienLogin.svg" alt="">
-    <div class=" lg:bg-[url('./static/LoginBg.png')] lg:w-full lg:h-screen lg:px-20  lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-end">
-        <div class=" pt-40 pb-8 lg:py-10 px-5 lg:px-24 lg:relative lg:bottom-14 bg-white rounded-md h-max w-[100%] lg:w-max border self-end">
+      <img class=" hidden lg:flex z-50 h-max absolute top-28 left-20 self-end" src="../static/bienLogin.svg" alt="">
+    <div class=" lg:bg-[url('./static/LoginBg.png')] lg:w-full lg:h-screen relative top-0 lg:px-20  lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-end">
+        <div class=" pt-40 pb-8 lg:py-10 px-5 lg:px-24 lg:relative lg:top-0 bg-white rounded-md h-max w-[100%] lg:w-max border self-center ">
             <div class=" mb-8 lg:mb-10">
                             <h4 class=" text-2xl lg:text-[32px] font-bold mb-2">Sign in</h4>
             <p class=" font-bold lg:text-xl">New user? <RouterLink class=" text-[#1473E6] font-normal lg:text-xl" to="/register">Create an account</RouterLink></p>

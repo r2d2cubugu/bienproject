@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class=" w-full relative">
-            <p class=" justify-self-center self-center align-middle text-center place-self-center absolute left-[48%] top-[48%] " v-if="!messageUserStore.isSelected"> Salam </p>
+            <p class=" justify-self-center self-center align-middle text-center place-self-center absolute left-[48%] top-[48%] font-bold " v-if="!messageUserStore.isSelected"> No Message Selected </p>
             <RouterView class=" w-full"></RouterView>
         </div>
     </div>

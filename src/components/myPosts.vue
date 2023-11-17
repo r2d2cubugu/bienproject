@@ -27,9 +27,10 @@
         >
         <div class=" relative">
 
-          <img class=""
+          <img v-if="!post.isClicked"
           :src=post.photoLink />
-          <div v-if="post.isClicked" class=" z-[1000000] text-white absolute left-0 bg-black top-0 w-full h-full overflow-scroll">
+          <img v-if="post.isClicked" class=" h-[500px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" alt="">
+          <div v-if="post.isClicked" class=" z-[1000000] text-white absolute left-0 bg-black top-0 w-[100.07998988889999999%] h-full overflow-scroll">
             <button @click="post.isClicked = false" class=" absolute">X</button>
             <div class=" flex flex-col top-5 absolute left-0 gap-4 pb-8">
               <div v-for="comment in post.comments">
@@ -173,7 +174,10 @@
   
   <style scoped>
   ::-webkit-scrollbar{
-    width: 3px;    
+    width: 0px;    
+  }
+  .hidden{
+    display: none;
   }
   ::-webkit-scrollbar-track{
     background-color: #d1e5ff;;    
@@ -187,6 +191,7 @@
     position: fixed;
     top: 10%;
   }
+  
   
   .swiper-slide {
     background-position: center;
