@@ -32,7 +32,7 @@ import { RouterLink } from 'vue-router';
           </div>
           <button class=" hidden mt-4 lg:flex text-[#1473E6]">Get help sign in</button>
           <div class=" lg:hidden p-0 gap-0 mt-2">
-          <button class="text-[#1473E6] text-[9px] block mb-0">Reset your password</button>
+          <button class="text-[#1473E6] text-[14px] lg:text-[9px] block mb-0">Reset your password</button>
 
           </div>
         </div>

@@ -29,37 +29,37 @@
 
           <img class=""
           :src=post.photoLink />
-          <div v-if="post.isClicked" class=" z-[1000000] text-white absolute left-0 bg-red-400 top-0 w-full h-full overflow-scroll">
+          <div v-if="post.isClicked" class=" z-[1000000] text-white absolute left-0 bg-black top-0 w-full h-full overflow-scroll">
             <button @click="post.isClicked = false" class=" absolute">X</button>
-            <div class=" flex flex-col top-5 absolute left-0">
+            <div class=" flex flex-col top-5 absolute left-0 gap-4 pb-8">
               <div v-for="comment in post.comments">
-                <div class=" flex border ">
+                <div class=" flex w-[60%] ml-2">
                   <!-- {{ comment.profil }} -->
                   <!-- <img class=" rounded-full" width="20" height="20" :src=comment.profil alt=""> -->
-                  <div class=" flex justify-center items-center">
+                  <div class=" flex justify-center items-start mr-3">
 
-                    <div class=" w-8 h-8 rounded-full">
-                    <img class=" w-8 h-8 rounded-full" src="https://imgs.search.brave.com/GGTJI_H5dVD0LtQEKp0AOkDjxYfSYenyuRsKN-HiswI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/MzcyMDI0OS9waG90/by9wcm9maWxlLW9m/LWEtZmVtYWxlLWRv/Y3Rvci5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9LXUydDgw/SlMxUUJlTUVNcFp0/MUE1X1o2a1NPWGlr/aFluUUR2c3dLZHZS/bz0" alt="">
+                    <div class=" w-10 h-10 rounded-full">
+                    <img class=" w-10 h-10 rounded-full self-start" src="https://imgs.search.brave.com/GGTJI_H5dVD0LtQEKp0AOkDjxYfSYenyuRsKN-HiswI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/MzcyMDI0OS9waG90/by9wcm9maWxlLW9m/LWEtZmVtYWxlLWRv/Y3Rvci5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9LXUydDgw/SlMxUUJlTUVNcFp0/MUE1X1o2a1NPWGlr/aFluUUR2c3dLZHZS/bz0" alt="">
                     </div>
                   </div>
       
-                  <div class=" flex flex-col w-full border">
+                  <div class=" flex flex-col w-full ">
 
-                    <p class=" w-full"> {{ comment.name }}</p>
+                    <p class=" w-full font-bold"> {{ comment.name }}</p>
                     <p class=" w-full"> {{ comment.descp }}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class=" fixed bottom-0 bg-black self-center h-min w-full">
+            <div class=" fixed bottom-0 bg-black self-center h-min w-full flex justify-between">
               <div class=" flex">
                 <div class=" w-16 rounded-full">
                 <img :src=userPostsStore.myProfile class=" w-max" alt="">
                 </div>
-                <textarea name="" class=" resize-none h-16 text-black" id="" cols="30" rows="8"></textarea>
+                <textarea name="" placeholder="Type something..." v-model="comment" class=" resize-none h-12 w-64 text-black self-center" id="" cols="30" rows="8"></textarea>
               </div>
-              <button></button>
+              <button @click="addComment(post.id)" class="bg-[#1473E6] text-white h-min py-1 px-1 rounded-full self-center">Send comment</button>
             </div>
           </div>
         </div>
@@ -129,6 +129,7 @@
         let userPostsStore = useUserPostsStore()
         let selectedComs = ref([])
         let selectedPost = userPostsStore.selectedPost;
+        let comment = ref()
         function clicked(id) {
           userPostsStore.closeComments(id)
           if(!userPostsStore.userPosts.find(el => el.id == id).isClicked){
@@ -138,6 +139,19 @@
           }else{
             userPostsStore.userPosts.find(el => el.id == id).isClicked = false
           // alert('f')
+          }
+        }
+        function addComment(id){
+          if(comment.value != null || comment.value != ''){
+            userPostsStore.userPosts.find(el => el.id == id).comments.push(
+              {
+                name: userPostsStore.myName,
+                descp:comment.value,
+                profil:userPostsStore.myProfile
+              }
+            )
+            alert(comment.value);
+            comment.value = ''
           }
         }
         // function toggleComment(){
@@ -151,7 +165,7 @@
         //   }
         // }
         return {
-          modules: [EffectCoverflow, Pagination],userPostsStore,selectedPost, clicked, selectedComs
+          modules: [EffectCoverflow, Pagination],userPostsStore,selectedPost, clicked, selectedComs, addComment, comment
         };
       },
     };

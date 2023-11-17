@@ -12,7 +12,7 @@ export let useUserPostsStore = defineStore({
             
     },
     isComponentPost: "",
-    myName: null,
+    myName: 'Miri',
     myProfile: "https://imgs.search.brave.com/fNfFIuWbI6hTW-UnaaoyU8Loc4R2oiCidqNc-EmfvnY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9waG90/b3JldHJpY2EuY29t/L2ltYWdlcy9zdmcv/cm91bmQtY29ybmVy/cy5zdmc.svg",
     likedPosts:{
         userProfil:"../static/userProfil.svg",

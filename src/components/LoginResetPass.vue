@@ -13,8 +13,8 @@ import { RouterLink } from 'vue-router';
             <p class=" lg:text-md text-neutral-700 font-semibold mb-1 lg:mb-3 ">{{ LoginStore.connectedMail }}</p>
             <div class=" flex gap-2">
              <div v-for="index in 6">
-              <div class="w-12 h-12 ">
-                <input value="" @keydown="goNext(index)" maxlength="1" class="w-full h-full flex flex-col items-center justify-center text-center px-2 outline-none rounded-xl border border-black text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700" type="sub" name="" :id=index>
+              <div class="lg:w-12 lg:h-12 w-10 h-10 ">
+                <input value="" @keydown.delete="goNext(index)" @keydown="goNext(index)" maxlength="1" class="w-full h-full flex flex-col items-center justify-center text-center px-2 outline-none rounded-xl border border-black text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700" type="sub" name="" :id=index>
               </div>
             </div>
             </div>
@@ -93,7 +93,8 @@ function newCode(){
 
 
 function goNext(x){
-  if (document.getElementById(x).lenght == document.getElementById(x).maxlength) {
+  if(x.key !== 'backspace'){
+    if (document.getElementById(x).lenght == document.getElementById(x).maxlength) {
     setTimeout(() => {
       console.log(document.getElementById(x).value.charAt(0));
       variables.value[x-1] = document.getElementById(x).value.charAt(0)
@@ -108,8 +109,8 @@ let passInt = ref(parseInt(passStr.value))
     LoginStore.toComponent("LoginReset")
   }
   
-console.log("edede bax", passInt.value);
-console.log("Str'e bax", passStr.value);
+console.log("eded", passInt.value);
+console.log("Str", passStr.value);
       
     }, 5);
     setTimeout(() => {
@@ -120,6 +121,9 @@ console.log("Str'e bax", passStr.value);
     }, 10);
    
     
+  }
+  }else{
+    alert('')
   }
 }
 

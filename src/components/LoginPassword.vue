@@ -2,7 +2,7 @@
     <div class=" flex flex-col h-screen gap-12">
       <img class="  hidden lg:flex h-max absolute top-32 left-20" src="../static/bienLogin.svg" alt="">
       <div class=" lg:bg-[url('./static/background2.png')] lg:w-full lg:h-[100vh] lg:px-20 lg:py-44 lg:bg-cover lg:bg-center lg:bg-no-repeat flex lg:justify-end">
-          <div class=" pt-40 pb-8 lg:py-20 px-5 lg:px-16 bg-white rounded-md h-max w-[100%] lg:w-max">
+          <div class=" pt-40 pb-8 lg:py-16 px-5 lg:px-16 bg-white rounded-md h-max w-[100%] lg:w-max">
               <div class=" mb-8 lg:mb-10">
                               <h4 class=" text-2xl lg:text-[32px] font-bold mb-2 self-center hidden lg:flex">Enter your password</h4>
                               <h4 class=" text-2xl lg:text-[22px] self-center font-bold mb-2">{{ LoginStore.connectedMail }}</h4>
@@ -29,13 +29,13 @@
               <button class=" text-sm flex border-2 px-10 rounded-2xl justify-center lg:justify-start lg:pl-3 self-center font-bold p-3 lg:text-[#0000008A] lg:text-base gap-2 w-[100%]"> <img class=" w-5 h-5 self-center" src="../static/Google.svg" alt=""> <p class="">Contuine with Google</p></button>
               
             </div>
-            <div class=" flex flex-col">
+            <div class=" flex flex-col mt-4 lg:mt-0">
             <button @click="LoginStore.toComponent('ResetPass')" class=" hidden mt-4 lg:flex text-[#1473E6]">Get help sign in</button>
             <button @click="LoginStore.toComponent('LoginHome')" class=" hidden mt-4 lg:flex text-[#1473E6]">Sign to another account</button>
             </div>
             <div class=" lg:hidden p-0 gap-0">
-            <button @click="LoginStore.toComponent('ResetPass')" class="text-[#1473E6] text-[9px] block mb-0">Reset your password</button>
-            <button class="text-[#1473E6] text-[9px]">Sign in to a different account</button>
+            <button @click="LoginStore.toComponent('ResetPass')" class="text-[#1473E6] text-[14px] lg:text-[9px] block mb-0">Reset your password</button>
+            <button class="text-[#1473E6] text-[14px] lg:text-[9px]">Sign in to a different account</button>
   
             </div>
           </div>

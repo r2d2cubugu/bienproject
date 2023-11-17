@@ -9,8 +9,8 @@
               <p class=" lg:text-md text-neutral-700 font-semibold mb-1 lg:mb-3 ">{{ LoginStore.connectedMail }}</p>
             </div>
             <div class=" flex flex-col gap-3 my-4 w-full">
-                <input v-model="password" class=" font-semibold p-2 w-[100%]" placeholder="New password" type="text">
-                <input v-model="password2" class=" font-semibold p-2" placeholder="New password again" type="text">
+                <input v-model="password" v-on:keyup.enter="$event.target.nextElementSibling.focus()" class=" font-semibold p-2 w-[100%]" placeholder="New password" type="text">
+                <input v-model="password2" @keyup.enter="changePass()" class=" font-semibold p-2" placeholder="New password again" type="text">
             </div>
             <p v-if="msg" class=" font-bold text-red-600">{{ msg }}</p>
             <button  @click="changePass()" class=" self-end bg-[#1877F2] text-white font-bold py-1 px-3 lg:py-2 rounded-full">Change</button>
