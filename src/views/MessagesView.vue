@@ -9,12 +9,12 @@
             <div class=" flex-col min-h-[50vh]">
                 <div v-for=" user in messageUserStore.chat" :key="user.id">
                     
-                        <button @click="$router.push(`/mymessage/${user.id}`), select(user.id)" :class="user.isSelected ? 'text-blue-700' : ''" class=" border-b-2 pl-2 flex justify-start text-sm py-3.5 w-full">
+                        <button @click="$router.push(`/mymessage/${user.id}`), select(user.id)" :class="user.isSelected ? 'text-blue-700' : ''" class=" border-b-2 pl-2 flex justify-start text-sm gap-2 py-3.5 w-full">
                             <!-- <pre>{{ contact }}</pre> -->
                             <img class=" w-12 h-12" :src=user.profil alt="">
-                            <div class=" ml-5">
+                            <div class=" justify-start items-start">
                                 <p class=" font-bold self-start justify-self-start">{{ user.name }}</p>
-                                <p class=" ">{{ user.messages[1].content }}</p>
+                                <p class="  justify-self-start self-start start">{{ user.messages[user.messages.length-1].content }}</p>
                             </div>
                             <!-- <p>
                                {{ contact.lastMessage.time }}
@@ -27,7 +27,7 @@
         </div>
         <div class=" w-full relative">
             <p class=" justify-self-center self-center align-middle text-center place-self-center absolute left-[48%] top-[48%] font-bold " v-if="!messageUserStore.isSelected"> No Message Selected </p>
-            <RouterView class=" w-full"></RouterView>
+            <RouterView class=" w-full h-full"></RouterView>
         </div>
     </div>
     </div>

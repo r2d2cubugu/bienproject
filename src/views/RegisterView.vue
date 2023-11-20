@@ -11,25 +11,26 @@
             <button><img class=" w-12 h-12 rounded-full border-2 self-center p-2 border-black" src="../static/blueRoundFace.png" alt=""></button>
            </div>
            <div
-              class=" flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 mt-8 mb-4 lg:mb-8 after:flex-1 after:border-t after:border-neutral-300">
+              class=" flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 mt-8 mb-4 after:flex-1 after:border-t after:border-neutral-300">
               <p
                 class="mx-4 mb-1 text-center text-[#00000080] text-opacity-50 ">
                 Or
               </p>
             </div>
             <div>
+  
                 <div>
                     <p class="text-neutral-700 text-xl font-semibold">Sign up with email</p>
                     <p class=" text-neutral-700 text-lg inline">Already have an account? </p> <button @click="$router.push('/login')" class=" font-semibold text-lg text-blue-600">Sign in</button>
                 </div>
+                <div class="  h-min">
+              </div>
                 <div class=" flex flex-col mt-6 lg:gap-4 lg:mt-7">
                 <input for="email" v-on:keyup.enter="$event.target.nextElementSibling.focus()" type="email" v-model="mail" :class=" isFalseMail ? ' border-red-600' : 'lg:border-black'"   required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg " placeholder="Email address">
                 <input @keyup.enter="registerNewUser" type="password" v-model="pass" :class=" isFalsePass ? ' border-red-600' : ''"  required class=" border-b-2 lg:border-2 p-1.5 pr-10 w-[96%] lg:rounded-lg lg:border-black" placeholder="Password">
                 </div>
-                <div class="  h-min">
-                <p v-if=" msg" :class=" isCorrect ? ' text-green-700 font-bold' : 'text-red-700 font-bold'" class=" text-sm h-fit">{{ msg }}</p>
-              </div>
-                <div class=" flex justify-end mt-2">
+                <p v-if=" msg" :class=" isCorrect ? ' text-green-700 font-bold' : 'text-red-700 font-bold'" class=" p-0 m-0 ">{{ msg }}</p>
+                <div v-if="!msg" class=" flex justify-end mt-2">
                     <button @keydown.enter="registerNewUser()" @click="registerNewUser()" class=" bg-[#1877F2] self-end  text-white py-1.5 px-3.5 rounded-full lg:rounded-lg">Contuine</button>
                 </div>
             </div>
@@ -60,6 +61,7 @@ let newUser = ref({})
 function registerNewUser(){
   if(mail.value == null || pass.value == null || mail.value == '' || pass.value == ''){
     msg.value = "Zehmet olmasa qirmizi xanalari doldurun."
+    isCorrect.value = false
     setTimeout(() => {
       msg.value = null
     }, 3000);
@@ -106,7 +108,7 @@ function registerNewUser(){
 
     loginStore.users.push(newUser.value)
     isCorrect.value = true
-    msg.value = " Hesaba girmek ucun zehmet olmasa login daxil olun."
+    msg.value = " Hesabiniz ugurla yarandi"
     setTimeout(() => {
       msg.value = null
     }, 3000);

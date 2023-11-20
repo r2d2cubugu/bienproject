@@ -40,7 +40,7 @@
                   <div class=" flex justify-center items-start mr-3">
 
                     <div class=" w-10 h-10 rounded-full">
-                    <img class=" w-10 h-10 rounded-full self-start" src="https://imgs.search.brave.com/GGTJI_H5dVD0LtQEKp0AOkDjxYfSYenyuRsKN-HiswI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/MzcyMDI0OS9waG90/by9wcm9maWxlLW9m/LWEtZmVtYWxlLWRv/Y3Rvci5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9LXUydDgw/SlMxUUJlTUVNcFp0/MUE1X1o2a1NPWGlr/aFluUUR2c3dLZHZS/bz0" alt="">
+                    <img v-if="comment.descp" class=" w-10 h-10 rounded-full self-start" src="https://imgs.search.brave.com/GGTJI_H5dVD0LtQEKp0AOkDjxYfSYenyuRsKN-HiswI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/MzcyMDI0OS9waG90/by9wcm9maWxlLW9m/LWEtZmVtYWxlLWRv/Y3Rvci5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9LXUydDgw/SlMxUUJlTUVNcFp0/MUE1X1o2a1NPWGlr/aFluUUR2c3dLZHZS/bz0" alt="">
                     </div>
                   </div>
       

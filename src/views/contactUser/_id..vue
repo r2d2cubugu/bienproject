@@ -13,7 +13,7 @@
                
             </div>
             
-        <div class=" overflow-y-scroll h-[60vh] flex flex-col items-start px-10 pt-4 pb-16 w-[100%] relative">
+        <div class=" overflow-y-scroll h-[60vh] flex flex-col items-start px-10 pt-4 pb-4 w-[100%] relative">
         <!-- <div class=" flex flex-col">
             <div v-for=" con in contact.messages" :key="con.id">
              {{ con }}
