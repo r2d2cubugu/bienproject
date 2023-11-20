@@ -21,12 +21,12 @@
                     <div class=" lg:w-64 hidden lg:inline-flex w-28 lg:h-8 lg:py-2 rounded-2xl border border-black justify-center bg-none lg:bg-white items-center gap-40">
     <p class="w-[67px] text-black text-sm font-normal ">Followging </p>  <p class="text-black text-sm font-normal ">47</p> </div>
 
-    <div class="w-[300px] h-[41.89px] relative justify-center items-center gap-[5px] flex pl-[5%] lg:hidden">
-        <div class="h-10 px-3 py-2.5 rounded-3xl border border-white justify-center items-center gap-[30px] flex">
+    <div class="w-[300px] h-[41.89px] relative justify-center items-center gap-[5px] flex lg:hidden">
+        <div class="h-10 px-3 py-2.5 rounded-3xl border border-white justify-center items-center gap-[20px] flex">
         <p class="text-white text-lg font-normal ">Followgin </p>
         <p class="text-white text-lg font-normal ">47</p>
     </div>
-    <div class="h-10 px-3 py-2.5 rounded-3xl border border-white justify-center items-center gap-[30px] flex">
+    <div class="h-10 px-3 py-2.5 rounded-3xl border border-white justify-center items-center gap-[20px] flex">
         <p class="text-white text-lg font-normal ">Followers </p>
         <p class="text-white text-lg font-normal ">26</p>
     </div>
