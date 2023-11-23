@@ -2,7 +2,9 @@
     <div class=" flex-col h-full" >
         <div class=" border-b pl-2 border-black w-full flex justify-between pr-2 py-[11.5px]">
             <div class=" flex gap-3">
-                <img class=" w-12" :src=contact.profil alt="">
+                <div class=" w-12 rounded-full">
+                    <img class=" w-12 h-12 rounded-full" :src=contact.profil alt="">
+                </div>
                 <p class=" self-center font-bold text-2xl"> {{ contact.name }}</p>
             </div>
             <div class=" flex gap-2">
@@ -23,7 +25,7 @@
           <!-- <div class=" px-[50%] py-2"><p>{{ contact.messages[0].time }}</p></div> -->
             <div v-for=" chat in contact.messages" class=" max-w-[66.6666666%] flex flex-shrink-0" :class="[chat.isYour ? 'self-end' : '']">
                 <div class="flex self-end break-words " :class="chat.isYour ? 'mb-[7%]' : 'mb-3'"  >
-                <img class="mr-3 flex-shrink-0" v-if="!chat.isYour" :src=contact.profil alt=""> 
+                <img class="mr-3 flex-shrink-0 rounded-full w-9 h-9" v-if="!chat.isYour" :src=contact.profil alt=""> 
                 <p class=" h-auto p-2 resize-none border break-all" :class="chat.isYour ? ' bg-green-900 text-white align-bottom  rounded-bl-3xl rounded-tl-3xl rounded-tr-xl' : ' bg-[#CECECE] rounded-br-3xl rounded-tr-3xl rounded-tl-xl'" >{{ chat.content }}</p>
                 </div>
             </div>

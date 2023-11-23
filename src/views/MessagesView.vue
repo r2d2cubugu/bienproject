@@ -11,7 +11,7 @@
                     
                         <button @click="$router.push(`/mymessage/${user.id}`), select(user.id)" :class="user.isSelected ? 'text-blue-700' : ''" class=" border-b-2 pl-2 flex justify-start text-sm gap-2 py-3.5 w-full">
                             <!-- <pre>{{ contact }}</pre> -->
-                            <img class=" w-12 h-12" :src=user.profil alt="">
+                            <img class=" w-12 h-12 rounded-full" :src=user.profil alt="">
                             <div class=" justify-start items-start">
                                 <p class=" font-bold self-start justify-self-start">{{ user.name }}</p>
                                 <p class="  justify-self-start self-start start">{{ user.messages[user.messages.length-1].content }}</p>

@@ -10,7 +10,7 @@ export let useMessageUserStore = defineStore({
                 name:"Hesen",
                 id:1,
                 isSelected:false,
-                profil:"../../src/static/contact1.png",
+                profil:"https://s3-alpha-sig.figma.com/img/4e59/7bc2/7f17a1bfa2efbb43f0436ca1bb41d75f?Expires=1701648000&Signature=H062kZxx3wLdrKb3-iBj9Kc04MNwnIx304-bkwryzEurQqiywEYHZKbIwRakixnBOR811O9lFSpm8ronHiIvxMc2c49X5gDJS4~z8n6~Pln~L5YyEA5NlCtFKNaCcS2CJ3a2QBh38FQUnFVWrCCCOCNqJfuIS4VFADMLcbIz4~3X9gpLBcgYsLRMAARSyIPMnF94teLN~NG4gPxtuNcGlmT~0P6lf7C8odtKd9MPHv5oRHnwSkxmK3WE7FzRgKSkLWtMQqi3N0zdckjDdjBwS7LD6Q03vS066YNgICZt7nKxhxQLY7EnUxVUQ04-3baBWSEs0weaUuUnbejqxhOv9g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
                 messages:[
                     {
                         isYour:false,
@@ -67,7 +67,7 @@ export let useMessageUserStore = defineStore({
                 name:"Eli",
                 id:2,
                 isSelected: false,
-                profil:"../../src/static/contact2.png",
+                profil:"https://www.figma.com/file/eCuTmzALv6S8RDrsCKZGGD/image/d60952a9a476e6a0ffe18b36dd5b4c70214d9884",
                 messages:[
                     {
                         isYour:false,
@@ -84,7 +84,7 @@ export let useMessageUserStore = defineStore({
                 name:"Huseyn",
                 id:3,
                 isSelected: false,
-                profil:"../../src/static/contact3.png",
+                profil:"https://s3-alpha-sig.figma.com/img/c712/7b68/3ff668199ae9f521ce8500f98c8131b4?Expires=1701648000&Signature=h1hN1nIvUdjT3WbX-2~iA1gAFGSleVZ1siUGMvmRoNzOtEpeYkGnTlmiRq1r8j6KhqpTl6weTKYIzqTN74VwU5pYvwD6uMLa9amG0QUbAa170KLfW~AOwK1HBnxoee7n~eyrnbGV2ld2FQA3wjh6xE9U6QKOlEn816AwaMgT6CAxTmCdGQ80~IhOS~KDcPaO8fK6Pm9C0kEMcAbOraim6JnRNKNjqj7WvT0kYir9krsrAMQ5J6N3WfJ~SSW91LzqtKOI-euTA6sJYeemVlOOtu9T6mrieP2mKoUvASz7BgfT0wpu5vA4Sbe35AKF0jjE1qn8LpQebnLNSZrMpUUgLA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
                 messages:[
                     {
                         isYour:false,
