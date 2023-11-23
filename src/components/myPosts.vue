@@ -23,11 +23,9 @@
       :modules="modules"
       class="mySwiper"
     >
-      ><swiper-slide class=""  v-for="post in userPostsStore.userPosts" :key="post.photoLink"
-        >
-        <div class=" relative">
-
-          <img v-if="!post.isClicked"
+      ><swiper-slide class=" w-80 h-80 flex"  v-for="post in userPostsStore.userPosts" :key="post.photoLink" >
+        <div class=" relative flex justify-center self-center items-center">
+          <img class=" self-center justify-self-center" v-if="!post.isClicked"
           :src=post.photoLink />
           <img v-if="post.isClicked" class=" h-[500px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" alt="">
           <div v-if="post.isClicked" class=" z-[1000000] text-white absolute left-0 bg-black top-0 w-[100.07998988889999999%] h-full overflow-scroll">

@@ -23,9 +23,9 @@ export let useUserPostsStore = defineStore({
     selectedPost: null,
     userPosts:[
         {
-            photoLink:"../../src/static/mostLiked.png",
+            photoLink:"https://cdn.theatlantic.com/thumbor/vDZCdxF7pRXmZIc5vpB4pFrWHKs=/559x0:2259x1700/1080x1080/media/img/mt/2017/06/shutterstock_319985324/original.jpg",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             comments:[
                 {
@@ -44,9 +44,9 @@ export let useUserPostsStore = defineStore({
             isClicked:false
         },
         {
-            photoLink:"../../src/static/latestPhoto.png",
+            photoLink:"https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             comments:[
                 {
@@ -58,9 +58,9 @@ export let useUserPostsStore = defineStore({
             isClicked:false
         },
         {
-            photoLink:"../../src/static/Rectangle 16.png",
+            photoLink:"https://headsupfortails.com/cdn/shop/articles/Cat_s_Mind.jpg?v=1624444348",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             likes:"",
             id:3,
@@ -149,7 +149,7 @@ export let useUserPostsStore = defineStore({
             ],
         },
         {
-            photoLink:"../../src/static/latestPhoto.png",
+            photoLink:"https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg",
             comments:[
                 {
 
@@ -160,23 +160,23 @@ export let useUserPostsStore = defineStore({
             isClicked:false
         },
         {
-            photoLink:"../../src/static/mostLiked.png",
+            photoLink:"https://cdn.theatlantic.com/thumbor/vDZCdxF7pRXmZIc5vpB4pFrWHKs=/559x0:2259x1700/1080x1080/media/img/mt/2017/06/shutterstock_319985324/original.jpg",
             comments:[
                 {
 
                 }
             ],
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             likes:"",
             id:5,
             isClicked:false
         },
         {
-            photoLink:"../../src/static/Rectangle 16.png",
+            photoLink:"https://headsupfortails.com/cdn/shop/articles/Cat_s_Mind.jpg?v=1624444348",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             comments:[
                 {
@@ -188,9 +188,9 @@ export let useUserPostsStore = defineStore({
             isClicked:false
         },
         {
-            photoLink:"../../src/static/latestPhoto.png",
+            photoLink:"https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             comments:[
                 {
@@ -202,9 +202,9 @@ export let useUserPostsStore = defineStore({
             isClicked:false
         },
         {
-            photoLink:"../../src/static/mostLiked.png",
+            photoLink:"https://cdn.theatlantic.com/thumbor/vDZCdxF7pRXmZIc5vpB4pFrWHKs=/559x0:2259x1700/1080x1080/media/img/mt/2017/06/shutterstock_319985324/original.jpg",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             comments:[
                 {
@@ -216,9 +216,9 @@ export let useUserPostsStore = defineStore({
             isClicked:false
         },
         {
-            photoLink:"../../src/static/latestPhoto.png",
+            photoLink:"https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             comments:[
                 {
@@ -230,9 +230,9 @@ export let useUserPostsStore = defineStore({
             isClicked:false
         },
         {
-            photoLink:"../../src/static/Rectangle 16.png",
+            photoLink:"https://headsupfortails.com/cdn/shop/articles/Cat_s_Mind.jpg?v=1624444348",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             comments:[
                 {
@@ -244,9 +244,9 @@ export let useUserPostsStore = defineStore({
             isClicked:false
         },
         {
-            photoLink:"../../src/static/mostLiked.png",
+            photoLink:"https://cdn.theatlantic.com/thumbor/vDZCdxF7pRXmZIc5vpB4pFrWHKs=/559x0:2259x1700/1080x1080/media/img/mt/2017/06/shutterstock_319985324/original.jpg",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             comments:[
                 {
@@ -258,9 +258,9 @@ export let useUserPostsStore = defineStore({
             isClicked:false
         },
         {
-            photoLink:"../../src/static/Rectangle 16.png",
+            photoLink:"https://headsupfortails.com/cdn/shop/articles/Cat_s_Mind.jpg?v=1624444348",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             comments:[
                 {
@@ -272,9 +272,9 @@ export let useUserPostsStore = defineStore({
             isClicked:false
         },
         {
-            photoLink:"../../src/static/latestPhoto.png",
+            photoLink:"https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg",
             tags:[
-                '#vallah','#bezdim','#buseyfeden'
+               '#design','#trend','#bien'
             ],
             comments:[
                 {
