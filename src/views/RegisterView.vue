@@ -6,7 +6,7 @@
           <div :class=" msg ? ' lg:px-14 lg:pb-6' : ' lg:px-16 lg:pb-4' " class=" pt-40 pb-8 lg:pt-20 lg:relative bottom-10  px-5 bg-white rounded-md h-max w-[100%] lg:w-max">
            <h4 class=" text-xl lg:text-[32px] self-start lg:self-center lg:text-center font-bold">Create an account</h4>
            <div class=" flex justify-center mt-8 lg:mt-12 gap-8">
-            <button><img class=" w-12 h-12 rounded-full border-2 p-2 border-black" src="../static/google.svg" alt=""></button>
+            <button>logo</button>
             <button><img class=" w-12 h-12 rounded-full border-2 p-2 self-center border-black" src="../static/blackAppleicon.svg" alt=""></button>
             <button><img class=" w-12 h-12 rounded-full border-2 self-center p-2 border-black" src="../static/blueRoundFace.png" alt=""></button>
            </div>

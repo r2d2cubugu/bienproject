@@ -26,7 +26,7 @@
               </p>
             </div>
             <div class=" flex gap-2 flex-col">
-              <button class=" text-sm flex border-2 px-10 rounded-2xl justify-center lg:justify-start lg:pl-3 self-center font-bold p-3 lg:text-[#0000008A] lg:text-base gap-2 w-[100%]"> <img class=" w-5 h-5 self-center" src="../static/Google.svg" alt=""> <p class="">Contuine with Google</p></button>
+              <button class=" text-sm flex border-2 px-10 rounded-2xl justify-center lg:justify-start lg:pl-3 self-center font-bold p-3 lg:text-[#0000008A] lg:text-base gap-2 w-[100%]"> <p class="">Contuine with Google</p></button>
               
             </div>
             <div class=" flex flex-col mt-4 lg:mt-0">

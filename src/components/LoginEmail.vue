@@ -25,7 +25,7 @@ import { RouterLink } from 'vue-router';
           </div>
           <div class=" flex gap-2 flex-col">
             <button class=" lg:bg-[#1877F2] text-sm flex border-2 px-10 lg:border-0 rounded-xl justify-center lg:justify-start lg:pl-3 self-center lg:text-white font-bold p-2 lg:text-base gap-2 w-[100%]"> <img class=" w-5 h-5 self-center" src="../static/Facebook_f_logo_(2019).svg" alt=""> <p class="">Contuine with Facebook</p></button>
-            <button class=" text-sm flex border-2 px-10 rounded-xl justify-center lg:justify-start lg:pl-3 self-center font-bold p-2 lg:text-[#0000008A] lg:text-base gap-2 w-[100%]"> <img class=" w-5 h-5 self-center" src="../static/Google.svg" alt=""> <p class="">Contuine with Google</p></button>
+            <button class=" text-sm flex border-2 px-10 rounded-xl justify-center lg:justify-start lg:pl-3 self-center font-bold p-2 lg:text-[#0000008A] lg:text-base gap-2 w-[100%]"> <p class="">Contuine with Google</p></button>
             <button class=" lg:bg-black text-sm flex border-2 px-10 lg:border-0 rounded-xl justify-center lg:justify-start lg:pl-3 self-center lg:text-white font-bold p-2 lg:text-base gap-2 w-[100%]"> <img class=" w-5 h-5 self-center hidden lg:flex" src="../static/whiteAppleicon.png" alt="">
               <img class=" w-5 h-5 self-center lg:hidden" src="../static/blackAppleicon.svg" alt="">
               <p class="">Contuine with Apple</p></button>
