@@ -11,7 +11,6 @@ html, body{
         <TheFooter class=" relative bottom-0" v-if="showHeader"/>
     </div>
 </template>
-
 <script setup>
 import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
