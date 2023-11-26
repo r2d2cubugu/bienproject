@@ -6,7 +6,7 @@
     </button>
       <div class=" overflow-hidden h-20 flex items-center p-10 border border-white">
   
-        <swiper
+        <swiper @slideChange="closePost()"
       :effect="'coverflow'"
       :grabCursor="true"
       :centeredSlides="true"
@@ -153,6 +153,12 @@
             comment.value = ''
           }
         }
+        function closeAll(){
+          for (let index = 0; index < userPostsStore; index++) {
+            userPostsStore.userPosts[i].isClicked = false;
+            
+          }
+        }
         // function toggleComment(){
         //   let swipe_slide=document.getElementsByClassName("swiper-slide ")[0]
         //   if(isClicked.value==false){
@@ -164,9 +170,17 @@
         //   }
         // }
         return {
-          modules: [EffectCoverflow, Pagination],userPostsStore,selectedPost, clicked, selectedComs, addComment, comment
+          modules: [EffectCoverflow, Pagination],userPostsStore,selectedPost, clicked, selectedComs, addComment, comment,closeAll
         };
       },
+      methods:{
+        closePost(){
+          for (let index = 0; index < this.userPostsStore.userPosts.length; index++) {
+            this.userPostsStore.userPosts[index].isClicked = false;
+            
+          }
+        }
+      }
     };
   </script>
   
