@@ -6,7 +6,7 @@
     </button>
       <div class=" overflow-hidden h-20 flex items-center p-10 border border-white">
   
-        <swiper @slideChange="closePost()"
+        <swiper id="swiper-container" :options="swiperOption" ref='mySwiper' @slideChange="closePost()"
       :effect="'coverflow'"
       :grabCursor="true"
       :centeredSlides="true"
@@ -123,12 +123,18 @@
   mounted(){
     // this.toggleComment()
   },
+  watch:{
+    lastSlideIndex(n){
+      this.lastSlideIndex = n
+    }
+  },
 
       setup() {
         let userPostsStore = useUserPostsStore()
         let selectedComs = ref([])
         let selectedPost = userPostsStore.selectedPost;
         let comment = ref()
+        
         function clicked(id) {
           userPostsStore.closeComments(id)
           if(!userPostsStore.userPosts.find(el => el.id == id).isClicked){
@@ -174,11 +180,11 @@
         };
       },
       methods:{
+        findIndex () { return this.$refs.mySwiper.$swiper.activeIndex },
         closePost(){
-          for (let index = 0; index < this.userPostsStore.userPosts.length; index++) {
-            this.userPostsStore.userPosts[index].isClicked = false;
-            
-          }
+          // console.log(this.changeSwiperIndex());
+          console.log(this.lastSlideIndex)
+          console.log(mySwiper)
         }
       }
     };
