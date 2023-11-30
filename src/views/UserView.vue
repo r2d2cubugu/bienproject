@@ -79,7 +79,7 @@ import { useUserPostsStore } from '../stores/UserPostsStore'
 import myPost from '../components/myPosts.vue'
 import {ref,computed,watch} from "vue"
 let loginStore = useLoginStore()
-console.log("loginstore goster",loginStore.isComponentPost)
+// console.log("loginstore goster",loginStore.isComponentPost)
 let isComponent=computed(()=>{
    if(userPostsStore.isComponentPost=="myPost"){
     return myPost

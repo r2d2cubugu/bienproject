@@ -50,7 +50,7 @@ function createOTP(){
         newPassword += characters[randomIndex];
       }
       kod.value = parseInt(newPassword);
-      console.log(kod.value);
+      // console.log(kod.value);
 
   }
   
@@ -96,9 +96,9 @@ function goNext(x){
   if(x.key !== 'backspace'){
     if (document.getElementById(x).lenght == document.getElementById(x).maxlength) {
     setTimeout(() => {
-      console.log(document.getElementById(x).value.charAt(0));
+      // console.log(document.getElementById(x).value.charAt(0));
       variables.value[x-1] = document.getElementById(x).value.charAt(0)
-      console.log(variables.value[x-1]);
+      // console.log(variables.value[x-1]);
 
         let passStr = ref("")
 for (let i = 0; i < 6; i++) {
@@ -109,8 +109,8 @@ let passInt = ref(parseInt(passStr.value))
     LoginStore.toComponent("LoginReset")
   }
   
-console.log("eded", passInt.value);
-console.log("Str", passStr.value);
+// console.log("eded", passInt.value);
+// console.log("Str", passStr.value);
       
     }, 5);
     setTimeout(() => {
@@ -123,7 +123,7 @@ console.log("Str", passStr.value);
     
   }
   }else{
-    alert('')
+    // alert('')
   }
 }
 

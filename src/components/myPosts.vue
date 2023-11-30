@@ -149,7 +149,7 @@ mounted(){
               profil:userPostsStore.myProfile
             }
           )
-          alert(comment.value);
+          // alert(comment.value);
           comment.value = ''
         }
       }

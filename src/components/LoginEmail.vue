@@ -63,13 +63,13 @@ function changeToPassword(){
   }else{
     // if(LoginStore.users.find(el => el.email == mail)){
 
-      console.log("LoginStore.email",LoginStore.users[0].email)
+      // console.log("LoginStore.email",LoginStore.users[0].email)
     checkMail.value = LoginStore.users.find(el => el.email == mail.value);
     // console.log(LoginStore.users.find(el => el.email == mail));
     // console.log(isMail.value);
     if(checkMail.value == undefined){
       msg.value = "Bele bir mail yoxdu"
-      console.log();
+      // console.log();
       setTimeout(() => {
       msg.value = null
     }, 2000);

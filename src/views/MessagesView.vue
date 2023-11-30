@@ -62,5 +62,5 @@ function select(id){
 
 const date = ref(new Date())
 const year = ref(date.value.getUTCFullYear)
-console.log(new Date());
+// console.log(new Date());
 </script>

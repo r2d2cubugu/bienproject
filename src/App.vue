@@ -24,7 +24,7 @@ let showHeader = computed(()=>{
     return route.meta.showHeader != false
 })
 
-console.log(LoginStore.email, LoginStore.password);
+// console.log(LoginStore.email, LoginStore.password);
 let CheckStore = useCheckStore()
 
 </script>

@@ -72,5 +72,5 @@ function sendMessage(id) {
     contact.value.messages.push(message.value)
     myMessage.value = null}
 }
-console.log(contact);
+// console.log(contact);
 </script>

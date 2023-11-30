@@ -20,7 +20,7 @@ export let useLoginStore = defineStore({
     }),
     actions:{
         toComponent(component){
-            console.log("componentede bax",component)
+            // console.log("componentede bax",component)
             this.isComponent = component
         },
         toComponentPost(component){
